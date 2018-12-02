@@ -1,0 +1,74 @@
+.list-comics .heading-title {
+  background-color: #134f5c; }
+.list-comics .bg-filter-letter {
+  background-color: #6fa8dc; }
+.list-comics .fillter-label label.checked {
+  background-color: #274e13; }
+.list-comics .fillter-label label {
+  color: white;
+  border: 1px solid black;
+  box-shadow: 1px 1px black;
+  background-color: #b6d7a8;
+  padding: 4px 10px;
+  display: inline-block; }
+.list-comics .collapse-wrapper a {
+  color: #274e13 !important; }
+.list-comics .table-pagination .page-item.active .page-link {
+  background-color: green; }
+.list-comics .table-pagination .page-link {
+  color: green; }
+.danhsach {
+  font-family: Tahoma;
+  font-size: 17px;
+}
+.alink {
+  color: black;
+}
+.card-header {
+  font-family: arial black;
+}
+.list-group-item {
+  font-family: cambri;
+  font-size: 20px;
+}
+h2.text-white {
+  font-family: Tahoma;
+  font-size: 30px;
+}
+h3.border-chapter {
+  font-family: Verdana;
+  font-size: 28px;
+}
+.chapter-comic {
+  .background-color: #eeeeee; }
+  .chapter-comic .heading-title {
+    background-color: #134f5c; }
+  .chapter-comic .bg-chapter {
+    background-color: #93c47d; }
+  .chapter-comic .card {
+    border: 2px solid black !important;
+    }
+  .chapter-comic .list-group-flush {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black; }
+  .chapter-comic .border-chapter {
+    border: 2px solid black;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 75px;
+    border-radius: 5px;
+    z-index: 1000;
+    background-color: white;
+    padding: 10px 20px;
+    margin: auto; }
+  @media (max-width: 768px) {
+    .chapter-comic button {
+      font-size: 12px; }
+    .chapter-comic .border-chapter {
+      font-size: 22px; } }
+  @media (max-width: 560px) {
+    .chapter-comic button {
+      font-size: 8px !important; } }
+
+/*# sourceMappingURL=list_comics.css.map */

@@ -1,0 +1,21 @@
+
+#goTop {
+bottom: 10px;
+cursor: pointer;
+display: none;
+height: 35px;
+position: fixed;
+right: 40px;
+width: 44px;
+z-index: 1000;
+}
+footer{
+  height: 50px;
+  background-color: #134f5c;}
+  footer p{
+    color: #fff;
+    margin-left: 85px;
+    padding-top: 15px;
+    font-family: Arial;
+    font-weight: bold;
+  }
