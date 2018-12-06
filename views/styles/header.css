@@ -1,41 +1,64 @@
 body {
-  font-family: monospace !important;
-  }
+    font-family: monospace !important;
+}
 
 header {
-  background-color: #009933; }
-  header a:hover {
-    text-decoration: none; }
-  header .nav-link {
-    color: white !important; }
-  header .dropdown-menu {
-    min-width: 200px; }
-  header .dropdown-menu.columns-3 {
-    min-width: 600px; }
-  header .dropdown-menu li a {
+    background-color: #009933;
+}
+
+header a:hover {
+    text-decoration: none;
+}
+
+header .nav-link {
+    color: white !important;
+}
+
+header .dropdown-menu {
+    min-width: 200px;
+}
+
+header .dropdown-menu.columns-3 {
+    min-width: 600px;
+}
+
+header .dropdown-menu li a {
     padding: 5px 15px;
-    font-weight: 300; }
-  header .multi-column-dropdown {
+    font-weight: 300;
+}
+
+header .multi-column-dropdown {
     list-style: none;
     margin: 0px;
-    padding: 0px; }
-  header .multi-column-dropdown li a {
+    padding: 0px;
+}
+
+header .multi-column-dropdown li a {
     display: block;
     clear: both;
     line-height: 1.428571429;
     color: #333;
-    white-space: normal; }
-  header .multi-column-dropdown li a:hover {
+    white-space: normal;
+}
+
+header .multi-column-dropdown li a:hover {
     text-decoration: none;
     color: #262626;
-    background-color: #999; }
-  @media (max-width: 767px) {
+    background-color: #999;
+}
+
+@media (max-width: 767px) {
     header .dropdown-menu.multi-column {
-      min-width: 240px !important;
-      overflow-x: hidden; } }
-  header .search-input .has-search .form-control {
-    padding-left: 2.375rem; }
-  header .search-input .has-search .form-control-feedback {
+        min-width: 240px !important;
+        overflow-x: hidden;
+    }
+}
+
+header .search-input .has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+header .search-input .has-search .form-control-feedback {
     position: absolute;
     z-index: 2;
     display: block;
@@ -44,16 +67,22 @@ header {
     line-height: 2.375rem;
     text-align: center;
     pointer-events: none;
-    color: #aaa; }
-  #title {
+    color: #aaa;
+}
+
+#title {
     font-family: Arial Black;
     font-weight: bold;
-  }
-  .menu {
+}
+
+.menu {
     font-family: Arial;
-  }
-  .item {
+}
+
+.item {
     font-family: Time New Roman;
     font-size: 18px;
-  }
+}
+
+
 /*# sourceMappingURL=header.css.map */
