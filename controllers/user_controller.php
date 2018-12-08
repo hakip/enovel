@@ -4,35 +4,39 @@ class UserController {
 	//Controllers don't directly connect to database.
 	//Sessions are temporary and will not be put to database nor models.
 	//Controllers need to check session_id before further processes.
-	function login($id, $password){
+	//Router most of the time doesn't send any data. Get data via $_GET/POST, etc...
+	function login(){
 		//generate session_id
 		// return $session_id;
+		$id = $_POST["id"];
+		$pw = $_POST["pw"];
 	}
-	function check_session($session_id){
+	function check_session(){
 		
 	}
 	function logout(){
 
 	}
-	function register($id, $password, $email, $optional){
-		//optinal array: ("$info"=>"info_type", "$info"=>"info_type") for ex: ("Alice"=>"Name")
-		//for password, hash and store the hash only. May need to include library.
+	function register(){
+		
 	}
-
-	function subscribe($id, $novel_name, $session_id){
+	function modify(){
+		
+	}
+	function subscribe(){
 
 	}
-	function unsubscribe($id, $novel_name, $session_id){
+	function unsubscribe(){
 
 	}
 	function getInfo($id){
-
+		echo $id;
 	}
 	function removeList(){
 
 	}
 	//If possible
-	function deleteAccount($id, $session_id){
+	function deleteAccount(){
 	}
 }
 ?>

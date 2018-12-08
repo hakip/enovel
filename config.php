@@ -4,5 +4,5 @@ $baseUrl = "http://localhost/enovel/";
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "examples";
+$dbname = "dbs";
 ?>
