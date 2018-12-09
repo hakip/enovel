@@ -34,8 +34,8 @@ class UserModel{
 
 	function login($email, $password){
     $sql = 'SELECT * FROM `nguoidung` WHERE quyen = "admin" and email = "'.$email.'" and matkhau = "'.$password.'" ';
-    $admin = $this->conn-> query($sql);
-    return $admin;
+    $resulf = $this->conn-> query($sql);
+    return $admin = mysqli_fetch_assoc($resulf);
 	}
 }
 ?>

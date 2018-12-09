@@ -5,20 +5,36 @@
 	 */
 	class AdminController
 	{
-		public function checkSession(){
+		public function login(){
 			$email = isset($_POST['email'])? $_POST['email']: '';
 			$password = isset($_POST['password'])? $_POST['password']: '';
-			$usermodel = new UserModel();
-			$admin = $usermodel->login($email, $password );
-			if(mysqli_fetch_assoc($admin))
-      {
+			if ($email != '' && $password != '') {
+				$usermodel = new UserModel();
+				$admin = $usermodel->login($email, $password );
+				if($admin)
+	      {
+					session_start();
           $_SESSION['Admin']=$_POST['email'];
-          header("location:admin/dashboard");
-      }
-      else
-      {
-          header("location:login");
-      }
+          header("location:dashboard");
+	      }
+	      else
+	      {
+          header("location:index");
+	      }
+			}
+			else {
+				require_once('./views/admin/login.php');
+			}
+		}
+
+		public function checkSession(){
+			require_once('./views/admin/dashboard.php');
+		}
+
+		public function logout(){
+			session_start();
+			session_destroy();
+			header("location:index");
 		}
 	}
 ?>

@@ -1,8 +1,12 @@
 <?php
-  session_start();
-
-  if(isset($_SESSION['Admin']))
+	session_start();
+	if(isset($_SESSION['Admin']))
   {
-    echo ' Well Come '.$_SESSION['Admin'].'<br/>';
-    echo '<a href="">Logout</a>';
+  	require_once('./views/admin/index.php');
   }
+  else
+  {
+    header("location:login");
+  }
+  
+?>

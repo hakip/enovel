@@ -109,15 +109,17 @@ class Router {
 				break;
 
 			// admin
-			case preg_match("~admin/login~", $url):
-				readfile("views/admin/login.php");
-				break;
 			case preg_match("~admin/index~", $url):
 				$controller = new AdminController;
-				$controller->checkSession();
+				$controller->login();
+				break;
+			case preg_match("~admin/logout~", $url):
+				$controller = new AdminController;
+				$controller->logout();
 				break;
 			case preg_match("~admin/dashboard~", $url):
-				readfile("views/admin/dashboard.php");
+				$controller = new AdminController;
+				$controller->checkSession();
 				break;
 
 			default:
