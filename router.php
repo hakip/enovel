@@ -108,6 +108,18 @@ class Router {
 				$controller->getEntryInfo($name);
 				break;
 
+			// admin
+			case preg_match("~admin/login~", $url):
+				readfile("views/admin/login.php");
+				break;
+			case preg_match("~admin/index~", $url):
+				$controller = new AdminController;
+				$controller->checkSession();
+				break;
+			case preg_match("~admin/dashboard~", $url):
+				readfile("views/admin/dashboard.php");
+				break;
+
 			default:
 				readfile("views/error.html");
 				break;

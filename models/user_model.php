@@ -5,6 +5,10 @@ class UserModel{
 	//Models don't check sessions nor store session informations.
 	public $conn;
 	function __construct(){
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "ass2";
 		$this->conn = new mysqli($servername, $username, $password, $dbname);
 	}
 	function addNew($id, $password, $email, $optional){
@@ -26,6 +30,12 @@ class UserModel{
 	//If possible
 	function deleteAccount($id){
 
+	}
+
+	function login($email, $password){
+    $sql = 'SELECT * FROM `nguoidung` WHERE quyen = "admin" and email = "'.$email.'" and matkhau = "'.$password.'" ';
+    $admin = $this->conn-> query($sql);
+    return $admin;
 	}
 }
 ?>
