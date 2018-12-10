@@ -6,9 +6,9 @@
     <title>Everywhere Novel - Access your bookshelf everywhere! - Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
-    <link rel="stylesheet" href="styles/home.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="views/styles/home.css">
+    <link rel="stylesheet" href="views/styles/footer.css">
+    <link rel="stylesheet" href="views/styles/header.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="text-white" href="home.html">
+            <a class="text-white" href="views/home.php">
                 <p class="mb-0 d-flex justify-content-center"><i class="fas fa-book-open fa-2x pr-2"></i><span id="title" class="d-flex flex-column justify-content-center">Everywhere Novel</span></p>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,35 +33,35 @@
                             <div class="row item">
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="list_novel.html">Action</a></li>
-                                        <li><a href="list_novel.html">Adventure</a></li>
-                                        <li><a href="list_novel.html">Comedy</a></li>
+                                        <li><a href="views/list_novel.php">Action</a></li>
+                                        <li><a href="views/list_novel.php">Adventure</a></li>
+                                        <li><a href="views/list_novel.php">Comedy</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Drama</a></li>
+                                        <li><a href="views/list_novel.php">Drama</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Fantasy</a></li>
+                                        <li><a href="views/list_novel.php">Fantasy</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="list_novel.html">Historical</a></li>
-                                        <li><a href="list_novel.html">Horror</a></li>
-                                        <li><a href="list_novel.html">Martial arts</a></li>
+                                        <li><a href="views/list_novel.php">Historical</a></li>
+                                        <li><a href="views/list_novel.php">Horror</a></li>
+                                        <li><a href="views/list_novel.php">Martial arts</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Mature</a></li>
+                                        <li><a href="views/list_novel.php">Mature</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Mystery</a></li>
+                                        <li><a href="views/list_novel.php">Mystery</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="list_novel.html">Psychological</a></li>
-                                        <li><a href="list_novel.html">Romance</a></li>
-                                        <li><a href="list_novel.html">Sports</a></li>
+                                        <li><a href="views/list_novel.php">Psychological</a></li>
+                                        <li><a href="views/list_novel.php">Romance</a></li>
+                                        <li><a href="views/list_novel.php">Sports</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Supernatural</a></li>
+                                        <li><a href="views/list_novel.php">Supernatural</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Tragedy</a></li>
+                                        <li><a href="views/list_novel.php">Tragedy</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -73,9 +73,9 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"></a>
-                            <a class="dropdown-item" href="list_novel.html">Hot picks</a>
+                            <a class="dropdown-item" href="views/list_novel.php">Hot picks</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="list_novel.html">New entries</a>
+                            <a class="dropdown-item" href="views/list_novel.php">New entries</a>
                         </div>
                     </li>
                 </ul>
@@ -92,11 +92,13 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"></a>
-                            <a class="dropdown-item" href="login.html">Login</a>
+                            <a class="dropdown-item" href="login.php">Login</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="edit_account.html">Edit Account</a>
+                            <a class="dropdown-item" href="edit_account.php">Edit Account</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="register.html">Register Account</a>
+                            <a class="dropdown-item" href="register.php">Register Account</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
                         </div>
                     </li>
                 </ul>
@@ -107,16 +109,16 @@
     <div class="new-story">
         <div class="container">
             <h2 class="title">
-                <a href="list_novel.html">New entry >></a>
+                <a href="views/list_novel.php">New entry >></a>
             </h2>
             <div class="new-story__body">
                 <div class="row m-0">
                     <div class="new-story__block col-md-3">
-                        <img src="images/data/Cover-1.png" alt="">
+                        <img src="views/images/data/Cover-1.png" alt="">
                     </div>
                     <div class="new-story__block new-story__right col-md-9 description">
                         <h3 class="text-center">
-                            <a href="novel_info.html">Dungeon Defense</a>
+                            <a href="views/novel_info.php">Dungeon Defense</a>
                         </h3>
                         <p>Do you know how this world ends?</p>
                         <p>Become the hero and defeat the 72 Demon Lords. The game that boasted as the absolute hardest strategy game, ?Dungeon Defense?</p>
@@ -139,60 +141,60 @@
     <div class="story-list">
         <div class="container">
             <h2 class="title">
-                <a href="../list-chapter/list_comics.html">Lasted Updates >></a>
+                <a href="views/list_novel.php">Lasted Updates >></a>
             </h2>
             <div class="story-list__box">
                 <div class="row">
                     <div class="col-lg col-md-4">
                         <div class="story-list__item mb-4">
-                            <img src="images/data/2.jpg" alt="">
+                            <img src="views/images/data/2.jpg" alt="">
                             <div class="story-list__name">
-                                <a href="novel_info.html">Pursuing Immortality</a>
+                                <a href="views/novel_info.php">Pursuing Immortality</a>
                                 <p>Chapter 330</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg col-md-4">
                         <div class="story-list__item mb-4">
-                            <img src="images/data/3.jpg" alt="">
+                            <img src="views/images/data/3.jpg" alt="">
                             <div class="story-list__name">
-                                <a href="novel_info.html">Bungaku Shoujo</a>
+                                <a href="views/novel_info.php">Bungaku Shoujo</a>
                                 <p>Chapter 20</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg col-md-4">
                         <div class="story-list__item mb-4">
-                            <img src="images/data/4.jpg" alt="">
+                            <img src="views/images/data/4.jpg" alt="">
                             <div class="story-list__name">
-                                <a href="novel_info.html">.hack//Cell</a>
+                                <a href="views/novel_info.php">.hack//Cell</a>
                                 <p>Chapter 2018</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg col-md-4">
                         <div class="story-list__item mb-4">
-                            <img src="images/data/5.jpg" alt="">
+                            <img src="views/images/data/5.jpg" alt="">
                             <div class="story-list__name">
-                                <a href="novel_info.html">(Um, Sorry) I’ve Been Reincarnated!</a>
+                                <a href="views/novel_info.php">(Um, Sorry) I’ve Been Reincarnated!</a>
                                 <p>Chapter 28</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg col-md-4">
                         <div class="story-list__item mb-4">
-                            <img src="images/data/6.jpg" alt="">
+                            <img src="views/images/data/6.jpg" alt="">
                             <div class="story-list__name">
-                                <a href="novel_info.html">A Tale of Two Phoenixes</a>
+                                <a href="views/novel_info.php">A Tale of Two Phoenixes</a>
                                 <p>Chapter 22</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg col-md-4 d-lg-none">
                         <div class="story-list__item mb-4">
-                            <img src="images/data/7.jpg" alt="">
+                            <img src="views/images/data/7.jpg" alt="">
                             <div class="story-list__name">
-                                <a href="novel_info.html">Adolescent Adam</a>
+                                <a href="views/novel_info.php">Adolescent Adam</a>
                                 <p>Chapter 122</p>
                             </div>
                         </div>
@@ -201,54 +203,54 @@
                 <div class="row">
                     <div class="col-lg col-md-4">
                         <div class="story-list__item mb-4">
-                            <img src="images/data/8.jpg" alt="">
+                            <img src="views/images/data/8.jpg" alt="">
                             <div class="story-list__name">
-                                <a href="novel_info.html">Alchemist’s Nirvana</a>
+                                <a href="views/novel_info.php">Alchemist’s Nirvana</a>
                                 <p>Chapter 111</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg col-md-4">
                         <div class="story-list__item mb-4">
-                            <img src="images/data/9.jpg" alt="">
+                            <img src="views/images/data/9.jpg" alt="">
                             <div class="story-list__name">
-                                <a href="novel_info.html">Battle Royale</a>
+                                <a href="views/novel_info.php">Battle Royale</a>
                                 <p>Chapter 234</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg col-md-4">
                         <div class="story-list__item mb-4">
-                            <img src="images/data/10.jpg" alt="">
+                            <img src="views/images/data/10.jpg" alt="">
                             <div class="story-list__name">
-                                <a href="novel_info.html">Black Lagoon</a>
+                                <a href="views/novel_info.php">Black Lagoon</a>
                                 <p>Chapter 35</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg col-md-4">
                         <div class="story-list__item mb-4">
-                            <img src="images/data/11.jpeg" alt="">
+                            <img src="views/images/data/11.jpeg" alt="">
                             <div class="story-list__name">
-                                <a href="novel_info.html">Carefree Path of Dreams</a>
+                                <a href="views/novel_info.php">Carefree Path of Dreams</a>
                                 <p>Chapter 11</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg col-md-4">
                         <div class="story-list__item mb-4">
-                            <img src="images/data/12.jpg" alt="">
+                            <img src="views/images/data/12.jpg" alt="">
                             <div class="story-list__name">
-                                <a href="novel_info.html">Chihaya Furu</a>
+                                <a href="views/novel_info.php">Chihaya Furu</a>
                                 <p>Chapter 120</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg col-md-4 d-lg-none">
                         <div class="story-list__item mb-4">
-                            <img src="images/data/13.jpg" alt="">
+                            <img src="views/images/data/13.jpg" alt="">
                             <div class="story-list__name">
-                                <a href="novel_info.html">Dragon Maken War</a>
+                                <a href="views/novel_info.php">Dragon Maken War</a>
                                 <p>Chapter 32</p>
                             </div>
                         </div>
@@ -268,71 +270,71 @@
                 <div class="col-lg-9">
                     <div class="story-list">
                         <h2 class="title">
-                            <a href="list_novel.html">Completed Novels>></a>
+                            <a href="views/list_novel.php">Completed Novels>></a>
                         </h2>
                         <div class="story-list__box">
                             <div class="row">
                                 <div class="col-lg-3 col-md-6">
                                     <div class="story-list__item mb-4">
-                                        <img src="images/data/14.jpg" alt="">
+                                        <img src="views/images/data/14.jpg" alt="">
                                         <div class="story-list__name">
-                                            <a href="novel_info.html">Etsusa Bridge</a>
+                                            <a href="views/novel_info.php">Etsusa Bridge</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <div class="story-list__item mb-4">
-                                        <img src="images/data/15.jpg" alt="">
+                                        <img src="views/images/data/15.jpg" alt="">
                                         <div class="story-list__name">
-                                            <a href="novel_info.html">Every Day the Protagonist</a>
+                                            <a href="views/novel_info.php">Every Day the Protagonist</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <div class="story-list__item mb-4">
-                                        <img src="images/data/16.jpg" alt="">
+                                        <img src="views/images/data/16.jpg" alt="">
                                         <div class="story-list__name">
-                                            <a href="novel_info.html">Evil God Average</a>
+                                            <a href="views/novel_info.php">Evil God Average</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <div class="story-list__item mb-4">
-                                        <img src="images/data/17.jpg" alt="">
+                                        <img src="views/images/data/17.jpg" alt="">
                                         <div class="story-list__name">
-                                            <a href="novel_info.html">Evil-like Duke Household</a>
+                                            <a href="views/novel_info.php">Evil-like Duke Household</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <div class="story-list__item mb-4">
-                                        <img src="images/data/18.jpg" alt="">
+                                        <img src="views/images/data/18.jpg" alt="">
                                         <div class="story-list__name">
-                                            <a href="novel_info.html">Expelled From Paradise</a>
+                                            <a href="views/novel_info.php">Expelled From Paradise</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <div class="story-list__item mb-4">
-                                        <img src="images/data/19.jpg" alt="">
+                                        <img src="views/images/data/19.jpg" alt="">
                                         <div class="story-list__name">
-                                            <a href="novel_info.html">Fake Cinderella</a>
+                                            <a href="views/novel_info.php">Fake Cinderella</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <div class="story-list__item mb-4">
-                                        <img src="images/data/20.jpg" alt="">
+                                        <img src="views/images/data/20.jpg" alt="">
                                         <div class="story-list__name">
-                                            <a href="novel_info.html">Fate/Strange Fake</a>
+                                            <a href="views/novel_info.php">Fate/Strange Fake</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <div class="story-list__item mb-4">
-                                        <img src="images/data/21.jpg" alt="">
+                                        <img src="views/images/data/21.jpg" alt="">
                                         <div class="story-list__name">
-                                            <a href="novel_info.html">Fate/Zero</a>
+                                            <a href="views/novel_info.php">Fate/Zero</a>
                                         </div>
                                     </div>
                                 </div>
@@ -347,32 +349,32 @@
                 </div>
                 <div class="col-lg-3">
                     <h2 class="title">
-                        <a href="list_novel.html">Genre</a>
+                        <a href="views/list_novel.php">Genre</a>
                     </h2>
                     <div class="categories">
                         <div class="genre">
-                            <a href="list_novel.html">Action</a><br>
-                            <a href="list_novel.html">Adventure</a><br>
-                            <a href="list_novel.html">Adult</a><br>
-                            <a href="list_novel.html">Comedy</a><br>
-                            <a href="list_novel.html">Drama</a><br>
-                            <a href="list_novel.html">Ecchi</a><br>
-                            <a href="list_novel.html">Fantasy</a><br>
-                            <a href="list_novel.html">Gender Bender</a><br>
-                            <a href="list_novel.html">Harem</a><br>
-                            <a href="list_novel.html">Historical</a><br>
-                            <a href="list_novel.html">Horror</a><br>
-                            <a href="list_novel.html">Martial arts</a><br>
-                            <a href="list_novel.html">Mature</a><br>
-                            <a href="list_novel.html">Mystery</a><br>
-                            <a href="list_novel.html">Psychological</a><br>
-                            <a href="list_novel.html">Romance</a><br>
-                            <a href="list_novel.html">School Life</a><br>
-                            <a href="list_novel.html">Science Fiction</a><br>
-                            <a href="list_novel.html">Slice of Life</a><br>
-                            <a href="list_novel.html">Sports</a><br>
-                            <a href="list_novel.html">Supernatural</a><br>
-                            <a href="list_novel.html">Tragedy</a><br>
+                            <a href="views/list_novel.php">Action</a><br>
+                            <a href="views/list_novel.php">Adventure</a><br>
+                            <a href="views/list_novel.php">Adult</a><br>
+                            <a href="views/list_novel.php">Comedy</a><br>
+                            <a href="views/list_novel.php">Drama</a><br>
+                            <a href="views/list_novel.php">Ecchi</a><br>
+                            <a href="views/list_novel.php">Fantasy</a><br>
+                            <a href="views/list_novel.php">Gender Bender</a><br>
+                            <a href="views/list_novel.php">Harem</a><br>
+                            <a href="views/list_novel.php">Historical</a><br>
+                            <a href="views/list_novel.php">Horror</a><br>
+                            <a href="views/list_novel.php">Martial arts</a><br>
+                            <a href="views/list_novel.php">Mature</a><br>
+                            <a href="views/list_novel.php">Mystery</a><br>
+                            <a href="views/list_novel.php">Psychological</a><br>
+                            <a href="views/list_novel.php">Romance</a><br>
+                            <a href="views/list_novel.php">School Life</a><br>
+                            <a href="views/list_novel.php">Science Fiction</a><br>
+                            <a href="views/list_novel.php">Slice of Life</a><br>
+                            <a href="views/list_novel.php">Sports</a><br>
+                            <a href="views/list_novel.php">Supernatural</a><br>
+                            <a href="views/list_novel.php">Tragedy</a><br>
                         </div>
                     </div>
                 </div>
@@ -382,7 +384,7 @@
     <footer>
         <p>Assignment 1 - Web Programming - Fall 2018</p>
         <div id="goTop">
-            <img src="images/top.svg" alt="top" />
+            <img src="views/images/top.svg" alt="top" />
         </div>
     </footer>
 </body>

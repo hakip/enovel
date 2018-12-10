@@ -5,9 +5,9 @@
     <title>Novel list</title>
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles/header.css">
-    <link rel="stylesheet" type="text/css" href="styles/list_novel.css">
-    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" type="text/css" href="views/styles/header.css">
+    <link rel="stylesheet" type="text/css" href="views/styles/list_novel.css">
+    <link rel="stylesheet" href="views/styles/footer.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -97,6 +97,8 @@
                             <a class="dropdown-item" href="#">Edit Account</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="register.html">Register Account</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
                         </div>
                     </li>
                 </ul>

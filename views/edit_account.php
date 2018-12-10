@@ -1,14 +1,19 @@
+<?php
+    session_start();
+    include_once "../models/user_model.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Everywhere Novel - Access your bookshelf everywhere! - Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Account</title>
+
     <link rel="stylesheet" href="views/styles/home.css">
     <link rel="stylesheet" href="views/styles/footer.css">
     <link rel="stylesheet" href="views/styles/header.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -28,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto pr-3">
                     <li class="dropdown nav-item pr-3">
-                        <a href="#" class="nav-link dropdown-toggle menu" data-toggle="dropdown"><i class="fas fa-list-ul"></i> Genre <b class="caret"></b></a>
+                        <a href="list_novel.php" class="nav-link dropdown-toggle menu" data-toggle="dropdown"><i class="fas fa-list-ul"></i> Genre <b class="caret"></b></a>
                         <ul class="dropdown-menu multi-column columns-3">
                             <div class="row item">
                                 <div class="col-sm-4">
@@ -68,7 +73,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown pr-3">
-                        <a class="nav-link dropdown-toggle menu" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle menu" href="list_novel.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-list-ul"></i> Novel list
                         </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
@@ -97,17 +102,42 @@
                             <a class="dropdown-item" href="edit_account.php">Edit Account</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="register.php">Register Account</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <h1>Oops! There is no page with this name on the site. Check your url.</h1>
-    <footer>
-        <p>Assignment 1 - Web Programming - Fall 2018</p>
-        <div id="goTop">
-            <img src="views/images/top.svg" alt="top" />
+    <div class="head1"></div>
+    <div class="container">
+        <h1>Edit Account</h1>
+    </div>
+    <form action="edit-process" method="POST">
+    <div class="container bootstrap snippets">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Full name</label>
+                <input type="text" name="fullname" class="form-control" id="inputAddress" placeholder="Johnson Baby">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
+            </div>
         </div>
-    </footer>
+        <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+                <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+            </div>
+        </div>
+    </div>
+    </form>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
 </body>
+
+</html>

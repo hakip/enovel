@@ -1,14 +1,16 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Register</title>
-    <link rel="stylesheet" href="styles/home.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/register.css">
+    <title>Page Login</title>
+    <link rel="stylesheet" href="views/styles/home.css">
+    <link rel="stylesheet" href="views/styles/footer.css">
+    <link rel="stylesheet" href="views/styles/header.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -19,7 +21,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="text-white" href="home.html">
+            <a class="text-white" href="home.php">
                 <p class="mb-0 d-flex justify-content-center"><i class="fas fa-book-open fa-2x pr-2"></i><span id="title" class="d-flex flex-column justify-content-center">Everywhere Novel</span></p>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,54 +30,54 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto pr-3">
                     <li class="dropdown nav-item pr-3">
-                        <a href="list_novel.html" class="nav-link dropdown-toggle menu" data-toggle="dropdown"><i class="fas fa-list-ul"></i> Genre <b class="caret"></b></a>
+                        <a href="list_novel.php" class="nav-link dropdown-toggle menu" data-toggle="dropdown"><i class="fas fa-list-ul"></i> Genre <b class="caret"></b></a>
                         <ul class="dropdown-menu multi-column columns-3">
                             <div class="row item">
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="list_novel.html">Action</a></li>
-                                        <li><a href="list_novel.html">Adventure</a></li>
-                                        <li><a href="list_novel.html">Comedy</a></li>
+                                        <li><a href="list_novel.php">Action</a></li>
+                                        <li><a href="list_novel.php">Adventure</a></li>
+                                        <li><a href="list_novel.php">Comedy</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Drama</a></li>
+                                        <li><a href="list_novel.php">Drama</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Fantasy</a></li>
+                                        <li><a href="list_novel.php">Fantasy</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="list_novel.html">Historical</a></li>
-                                        <li><a href="list_novel.html">Horror</a></li>
-                                        <li><a href="list_novel.html">Martial arts</a></li>
+                                        <li><a href="list_novel.php">Historical</a></li>
+                                        <li><a href="list_novel.php">Horror</a></li>
+                                        <li><a href="list_novel.php">Martial arts</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Mature</a></li>
+                                        <li><a href="list_novel.php">Mature</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Mystery</a></li>
+                                        <li><a href="list_novel.php">Mystery</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="list_novel.html">Psychological</a></li>
-                                        <li><a href="list_novel.html">Romance</a></li>
-                                        <li><a href="list_novel.html">Sports</a></li>
+                                        <li><a href="list_novel.php">Psychological</a></li>
+                                        <li><a href="list_novel.php">Romance</a></li>
+                                        <li><a href="list_novel.php">Sports</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Supernatural</a></li>
+                                        <li><a href="list_novel.php">Supernatural</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Tragedy</a></li>
+                                        <li><a href="list_novel.php">Tragedy</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </ul>
                     </li>
                     <li class="nav-item dropdown pr-3">
-                        <a class="nav-link dropdown-toggle menu" href="list_novel.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle menu" href="list_novel.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-list-ul"></i> Novel list
                         </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"></a>
-                            <a class="dropdown-item" href="list_novel.html">Hot picks</a>
+                            <a class="dropdown-item" href="list_novel.php">Hot picks</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="list_novel.html">New entries</a>
+                            <a class="dropdown-item" href="list_novel.php">New entries</a>
                         </div>
                     </li>
                 </ul>
@@ -92,11 +94,13 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"></a>
-                            <a class="dropdown-item" href="login.html">Login</a>
+                            <a class="dropdown-item" href="login.php">Login</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="edit_account.html">Edit Account</a>
+                            <a class="dropdown-item" href="edit_account.php">Edit Account</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="register.html">Register Account</a>
+                            <a class="dropdown-item" href="register.php">Register Account</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
                         </div>
                     </li>
                 </ul>
@@ -105,36 +109,31 @@
     </header>
     <div class="head1"></div>
     <div class="container">
-        <h1>Register Form</h1>
-    </div>
-    <div class="container">
-        <form>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputPassword4">New Password</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="New Password">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                  I accept with your term
-                </label>
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Sign In</h5>
+                        <form class="form-signin" action="" method="POST">
+                            <div class="form-label-group">
+                                <label for="inputEmail">Email address</label>
+                                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                           </div>
+
+                            <div class="form-label-group">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                
+                            </div>
+                            <hr class="my-4">
+                            <input name="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Sign in">
+                            <a class="btn btn-lg btn-primary btn-block text-uppercase" href="views/forget_pass.php">Forget Password</a>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </form>
+        </div>
     </div>
+</body>
+
+</html>
