@@ -8,6 +8,7 @@ CREATE TABLE chuong (
     ten text NOT NULL,
     noidung text NOT NULL,
     ngaytao date NOT NULL,
+    ngaysua date NOT NULL,
     truyen_id int NOT NULL,
     CONSTRAINT chuong_pk PRIMARY KEY (id)
 );
@@ -27,6 +28,7 @@ CREATE TABLE truyen (
     id int NOT NULL AUTO_INCREMENT,
     url_anh text NOT NULL,
     ten varchar(100) NOT NULL,
+    theloai varchar(100) NOT NULL,
     mota text NOT NULL,
     ngaytao date NOT NULL,
     ngaysua date NOT NULL,

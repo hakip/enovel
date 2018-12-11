@@ -17,10 +17,6 @@
 					    <input type="email" name="email" class="form-control" placeholder="Enter email" value="'.$user['email'].'" required>
 					  </div>
 					  <div class="form-group">
-					    <label for="exampleInputPassword1">Current password</label>
-					    <input type="password" name="current_password" class="form-control" placeholder="Current password">
-					  </div>
-					  <div class="form-group">
 					    <label for="exampleInputPassword1">New password</label>
 					    <input type="password" name="new_password" class="form-control" placeholder="New password">
 					  </div>

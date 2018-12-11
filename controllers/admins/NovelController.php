@@ -12,9 +12,11 @@
 			          <tr>
 			            <th scope="col"><button class="btn btn-outline-secondary text-white" onclick="newNovel();" >New</button></th>
 			            <th scope="col">Title</th>
+			            <th scope="col">Type</th>
 			            <th scope="col">Image</th>
 			            <th scope="col">Description</th>
 			            <th scope="col">Created at</th>
+			            <th scope="col">Updated at</th>
 			            <th scope="col">Status</th>
 			            <th scope="col">Author</th>
 			            <th scope="col">Action</th>
@@ -25,9 +27,11 @@
 		  	$str = $str. '<tr>
 									      <th scope="row" name="id_novel" data-id ='.$row{'id'}.'>'.$row{'id'}.'</th>
 									      <td>'.$row{'ten'}.'</td>
+									      <td>'.$row{'theloai'}.'</td>
 									      <td><img src="'.$row{'url_anh'}.'" width="130" height="150" alt="url-image-wrong"/></td>
 									      <td>'.$row{'mota'}.'</td>
 									      <td>'.$row{'ngaytao'}.'</td>
+									      <td>'.$row{'ngaysua'}.'</td>
 									      <td>'.(($row{'trangthai'})? '<span class="text-success">Active</span>':'<span class="text-secondary">Inactive</span>').'</td>
 									      <td>'.$row{'tentacgia'}.'</td>
 
@@ -42,12 +46,13 @@
 		}
 		public function createrecord(){
 			$ten = isset($_POST['ten'])? $_POST['ten']: '';
+			$theloai = isset($_POST['theloai'])? $_POST['theloai']: '';
 			$url_anh = isset($_POST['url_anh'])? $_POST['url_anh']: '';
 			$mota = isset($_POST['mota'])? $_POST['mota']: '';
 			$trangthai = isset($_POST['trangthai'])? $_POST['trangthai']: '';
 			$tentacgia = isset($_POST['tentacgia'])? $_POST['tentacgia']: '';
 			$model = new NovelModel();
-			$user = $model->a_create($ten, $url_anh, $mota, $trangthai, $tentacgia);
+			$user = $model->a_create($ten, $theloai, $url_anh, $mota, $trangthai, $tentacgia);
 			if ($user) {
 				echo '<script>
 								window.location.href = "dashboard#rel.in.novel";
@@ -74,12 +79,13 @@
 		public function updaterecord(){
 			$id = isset($_POST['id'])? $_POST['id']: '';
 			$ten = isset($_POST['ten'])? $_POST['ten']: '';
+			$theloai = isset($_POST['theloai'])? $_POST['theloai']: '';
 			$url_anh = isset($_POST['url_anh'])? $_POST['url_anh']: '';
 			$mota = isset($_POST['mota'])? $_POST['mota']: '';
 			$trangthai = isset($_POST['trangthai'])? $_POST['trangthai']: '';
 			$tentacgia = isset($_POST['tentacgia'])? $_POST['tentacgia']: '';
 			$model = new NovelModel();
-			$result = $model->a_update_novel($id, $ten, $url_anh, $mota, $trangthai, $tentacgia);
+			$result = $model->a_update_novel($id, $ten, $theloai, $url_anh, $mota, $trangthai, $tentacgia);
 			if ($result) {
 				echo '<script>
 								window.location.href = "dashboard#rel.in.novel";

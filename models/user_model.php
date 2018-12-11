@@ -83,7 +83,7 @@ class UserModel{
 		if ($password == "") {
 			$sql = "UPDATE nguoidung SET hoten = '".$fullname."', email = '".$email."' WHERE id = '".$id."'";
 		}else{
-			$sql = "UPDATE nguoidung SET matkhau = '".$password."', hoten = '".$fullname."', email = '".$email."' WHERE id = '".$id."'";
+			$sql = "UPDATE nguoidung SET matkhau = '".md5($password)."', hoten = '".$fullname."', email = '".$email."' WHERE id = '".$id."'";
 		}
 		return mysqli_query($this->conn,$sql);
 	}

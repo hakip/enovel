@@ -60,8 +60,8 @@ class NovelModel {
 		return $result;
 	}
 
-	function a_create($ten, $url_anh, $mota, $trangthai, $tentacgia){
-		$sql = "INSERT INTO truyen(ten,url_anh,mota,trangthai,tentacgia,ngaytao) VALUES('".$ten."','".$url_anh."','".$mota."','".$trangthai."','".$tentacgia."', NOW())";
+	function a_create($ten, $theloai, $url_anh, $mota, $trangthai, $tentacgia){
+		$sql = "INSERT INTO truyen(ten,theloai,url_anh,mota,trangthai,tentacgia,ngaytao) VALUES('".$ten."','".$theloai."','".$url_anh."','".$mota."','".$trangthai."','".$tentacgia."', NOW())";
 		return mysqli_query($this->conn,$sql);
 	}
 	function a_delete_novel($id){
@@ -72,8 +72,8 @@ class NovelModel {
 		$sql =  "SELECT * FROM truyen WHERE id = '".$id."'";
 		return mysqli_query($this->conn,$sql);
 	}
-	function a_update_novel($id, $ten, $url_anh, $mota, $trangthai, $tentacgia){
-		$sql = "UPDATE truyen SET ten = '".$ten."', url_anh = '".$url_anh."', mota = '".$mota."', trangthai = '".$trangthai."', tentacgia = '".$tentacgia."', ngaysua = NOW() WHERE id = '".$id."'";
+	function a_update_novel($id, $ten, $theloai, $url_anh, $mota, $trangthai, $tentacgia){
+		$sql = "UPDATE truyen SET ten = '".$ten."', theloai = '".$theloai."', url_anh = '".$url_anh."', mota = '".$mota."', trangthai = '".$trangthai."', tentacgia = '".$tentacgia."', ngaysua = NOW() WHERE id = '".$id."'";
 
 		return mysqli_query($this->conn,$sql);
 	}
