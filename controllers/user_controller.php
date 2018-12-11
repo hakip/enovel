@@ -94,7 +94,7 @@ class UserController {
 					$usermodel->forgetPassword($user);
 					echo '<script language="javascript">';
 					echo 'alert("Change password success");';  
-					echo 'window.location.href = "/enovel.php";';
+					echo 'window.location.href = "/enovel";';
 					echo '</script>';
 				}
 				else {
