@@ -102,6 +102,8 @@
                             <a class="dropdown-item" href="register.php">Register Account</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="logout.php">Logout</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="list_subscipt.php">List Subsript</a>
                         </div>
                     </li>
                 </ul>
@@ -110,21 +112,29 @@
     </header>
     <div class="head1"></div>
     <div class="container">
-        <h1>New Password Form</h1>
-    </div>
-    <div class="container">
-        <form method="POST" action="">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
-                    <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Forget Password</h5>
+                        <form class="form-signin" action="" method="POST">
+                            <div class="form-label-group">
+                                <label for="inputEmail">Email address</label>
+                                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                           </div>
+
+                            <div class="form-label-group">
+                                <label for="inputPassword">New Password</label>
+                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                
+                            </div>
+                            <hr class="my-4">
+                            <input name="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Submit">
+                           
+                        </form>
+                    </div>
                 </div>
             </div>
-
-            <input type="submit" name="submit" class="btn btn-primary" value="Update">
-        </form>
+        </div>
     </div>
+</body>

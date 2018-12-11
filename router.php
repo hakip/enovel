@@ -42,9 +42,9 @@ class Router {
 				$controller->edit();
 				break;
 			case preg_match("~forget-pass~",$url):
-				readfile("views/edit_account.php");
+				readfile("views/forget_pass.php");
 				$controller = new UserController;
-				$controller->edit();
+				$controller->forgetPassword();
 				break;
 			case preg_match("~subscribe~",$url):
 				$controller = new UserController;

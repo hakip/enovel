@@ -48,12 +48,5 @@ class UserModel{
 	function unsubscribe($id, $novel_name){
 
 	}
-	function getInfo($id){
-
-	}
-	//If possible
-	function deleteAccount($id){
-
-	}
 }
 ?>

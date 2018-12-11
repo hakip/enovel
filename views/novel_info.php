@@ -99,6 +99,8 @@
                             <a class="dropdown-item" href="register.php">Register Account</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="logout.php">Logout</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="list_subscipt.php">List Subsript</a>
                         </div>
                     </li>
                 </ul>
@@ -114,7 +116,7 @@
                         <img src="images/data/Cover-1.png" alt="failed to load">
                         <div class="wrapper">
                             <div class="btn-group-vertical">
-                                <button type="button" class="btn btn-success">Add to list</button>
+                                <input type="button" name="submit" class="btn btn-success">Add to list</button>
                                 <button type="button" class="btn btn-info">First chapter</button>
                                 <button type="button" class="btn btn-warning">Lasted chapter</button>
                             </div>

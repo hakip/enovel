@@ -99,6 +99,8 @@
                             <a class="dropdown-item" href="register.html">Register Account</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="logout.php">Logout</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="list_subscipt.php">List Subript</a>
                         </div>
                     </li>
                 </ul>

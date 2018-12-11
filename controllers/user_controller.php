@@ -6,6 +6,7 @@ class UserController {
 	//Controllers need to check session_id before further processes.
 	//Router most of the time doesn't send any data. Get data via $_GET/POST, etc...
 	function login(){
+		
 		if (isset($_POST['submit'])) 
 			
 			if ($_POST['email'] != "" && $_POST['password'] != "" ) {
@@ -15,15 +16,24 @@ class UserController {
 					$row = mysqli_fetch_array($usermodel->get_user_by_email($_POST['email']));
 					if ($row['matkhau'] == md5($_POST['password'])) {
 						$_SESSION['nguoidung'] = $row['id'];
-						echo "Đăng nhập thành công";
+						
+						echo '<script language="javascript">';
+						echo 'alert("Login success")';  
+						echo '</script>';	
+												
+						header("Location: http://localhost/enovel/");
 						
 					}
 					else {
-						echo "Sai mật khẩu";
+						echo '<script language="javascript">';
+						echo 'alert("Error Password")';  
+						echo '</script>';
 					}		
 				}
 				else {
-					echo "Tài khoản không tồn tại";
+					echo '<script language="javascript">';
+					echo 'alert("Account not exist")';  
+					echo '</script>';
 				}
 			}
 		}
@@ -49,14 +59,20 @@ class UserController {
 						'quyen' => "member"
 					);
 					$usermodel->register($user);
-					echo "Đăng kí thành công";
+					echo '<script language="javascript">';
+					echo 'alert("Register success")';  
+					echo '</script>';
 				}
 				else {
-					echo "Tài khoản bạn đã đăng kí rồi";
+					echo '<script language="javascript">';
+					echo 'alert("Account aldready register")';  
+					echo '</script>';
 				}
 			}
 			else {
-				echo "Chưa nhập đủ thông tin";
+				echo '<script language="javascript">';
+				echo 'alert("Please fill all of form ")';  
+				echo '</script>';
 			}
 			
 		
@@ -73,14 +89,20 @@ class UserController {
 						'matkhau' => md5($_POST['password'])
 					);
 					$usermodel->forgetPassword($user);
-					echo "Đổi mật khẩu thành công";
+					echo '<script language="javascript">';
+					echo 'alert("Change password success")';  
+					echo '</script>';
 				}
 				else {
-					echo "Tài khoản không tồn tại";
+					echo '<script language="javascript">';
+					echo 'alert("Account not exist")';  
+					echo '</script>';
 				}
 			}
 			else {
-				echo "Chưa nhập đủ thông tin";
+				echo '<script language="javascript">';
+				echo 'alert("Please fill all of form ")';  
+				echo '</script>';
 			}
 	}
 	function edit(){
@@ -96,14 +118,20 @@ class UserController {
 						'matkhau' => md5($_POST['password'])
 					);
 					$usermodel->edit($user);
-					echo "Chỉnh sửa thành công";
+					echo '<script language="javascript">';
+					echo 'alert("Edit success")';  
+					echo '</script>';
 				}
 				else {
-					echo "Tài khoản không tồn tại";
+					echo '<script language="javascript">';
+					echo 'alert("Account not exist")';  
+					echo '</script>';
 				}
 			}
 			else {
-				echo "Chưa nhập đủ thông tin";
+				echo '<script language="javascript">';
+				echo 'alert("Please fill all of form ")';  
+				echo '</script>';
 			}
 	}
 	function subscribe(){
@@ -112,14 +140,6 @@ class UserController {
 	function unsubscribe(){
 
 	}
-	function getInfo($id){
-		echo $id;
-	}
-	function removeList(){
-
-	}
-	//If possible
-	function deleteAccount(){
-	}
 }
+
 ?>

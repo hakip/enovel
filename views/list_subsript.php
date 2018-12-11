@@ -113,34 +113,3 @@
         </nav>
     </header>
     <div class="head1"></div>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card card-signin my-5">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Edit Account</h5>
-                        <form class="form-signin" action="" method="POST">
-                            <div class="form-label-group">
-                                <label for="inputEmail">Full name</label>
-                                <input type="text" name="fullname" class="form-control" id="inputAddress" placeholder="Johnson Baby">
-                           </div>
-
-                            <div class="form-label-group">
-                                <label for="inputPassword">Password</label>
-                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                                
-                            </div>
-                            <hr class="my-4">
-                            <input name="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Submit">
-                           
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</body>
-
-</html>
