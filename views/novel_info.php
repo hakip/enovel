@@ -104,6 +104,7 @@
                             <a class="dropdown-item" href="user/logout.php">Logout</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="user/list_subscipt.php">List Subsript</a>
+
                         </div>
                     </li>
                 </ul>

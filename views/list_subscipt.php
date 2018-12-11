@@ -101,13 +101,14 @@
                             <a class="dropdown-item" href="user/logout.php">Logout</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="user/list_subscipt.php">List Subsript</a>
+
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-   
+  
     <h1>List Subscript</h1>
     <div class="row table-pagination pr-md-5 px-3 pl-md-0">
         <table class="table table-striped danhsach">
@@ -127,7 +128,7 @@
             </tbody>
         </table>
     </div>
-        
+ 
     <footer>
         <p>Assignment 1 - Web Programming - Fall 2018</p>
         <div id="goTop">
@@ -135,3 +136,4 @@
         </div>
     </footer>
 </body>
+</html>

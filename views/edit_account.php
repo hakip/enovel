@@ -140,12 +140,11 @@
             </div>
         </div>
     </div>
-
-</body>
-<footer>
+    <footer>
         <p>Assignment 1 - Web Programming - Fall 2018</p>
         <div id="goTop">
             <img src="enovel/views/images/top.svg" alt="top" />
         </div>
     </footer>
+</body>
 </html>

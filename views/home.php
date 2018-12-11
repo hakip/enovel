@@ -101,6 +101,7 @@
                             <a class="dropdown-item" href="user/logout.php">Logout</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="user/list_subscipt.php">List Subsript</a>
+
                         </div>
                     </li>
                 </ul>
@@ -121,6 +122,7 @@
                     <div class="new-story__block new-story__right col-md-9 description">
                         <h3 class="text-center">
                             <a href="/enovel/views/novel_info.php">Dungeon Defense</a>
+
                         </h3>
                         <p>Do you know how this world ends?</p>
                         <p>Become the hero and defeat the 72 Demon Lords. The game that boasted as the absolute hardest strategy game, ?Dungeon Defense?</p>

@@ -17,7 +17,6 @@ class UserController {
 					$row = mysqli_fetch_array($usermodel->get_user_by_email($_POST['email']));
 					if ($row['matkhau'] == md5($_POST['password'])) {
 						$_SESSION['nguoidung'] = $row['id'];
-						echo '<script language="javascript">';
 						echo 'alert("Login success");';  
 						echo 'window.location.href = "/enovel";';
 						echo '</script>';	
@@ -31,8 +30,8 @@ class UserController {
 				}
 				else {
 					echo '<script language="javascript">';
-					echo 'alert("Account not exist, You must register");';  
-					echo 'window.location.href = "/enovel/user/register.php";';
+					echo 'alert("Account not exist, You need to register or check mail");';  
+					echo 'window.location.href = "/enovel/user/login.php";';
 					echo '</script>';
 				}
 			}
@@ -152,6 +151,7 @@ class UserController {
 		# code...
 	}
 	function subscribe(){
+
 		if(!$_SESSION['nguoidung'])
 		{
 			echo '<script language="javascript">';
@@ -194,5 +194,4 @@ class UserController {
 		}
 	
 	}
-
 ?>
