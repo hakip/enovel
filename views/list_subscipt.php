@@ -8,7 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <link rel="stylesheet" href="/enovel/views/styles/home.css">
     <link rel="stylesheet" href="/enovel/views/styles/footer.css">
-    <link rel="stylesheet" href="enovel/views/styles/header.css">
+    <link rel="stylesheet" href="/enovel/views/styles/header.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -90,7 +90,6 @@
                         <a class="nav-link dropdown-toggle menu" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user-alt"></i> User area
                         </a>
-                        </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"></a>
                             <a class="dropdown-item" href="user/login.php">Login</a>
@@ -102,22 +101,39 @@
                             <a class="dropdown-item" href="user/logout.php">Logout</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="user/list_subscipt.php">List Subsript</a>
-                            <a class="dropdown-item" href="register.php">Register Account</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="logout.php">Logout</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="list_subscipt.php">List Subsript</a>
+
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <h1>Oops! There is no page with this name on the site. Check your url.</h1>
+  
+    <h1>List Subscript</h1>
+    <div class="row table-pagination pr-md-5 px-3 pl-md-0">
+        <table class="table table-striped danhsach">
+            <thead>
+                <tr style="background-color: #274e13;" class="text-white">
+                    <th>Novel title</th>
+                    <th>Newest Chapter</th>
+                    <th>Upload Date</th>
+                    <th class="text-center">Views</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                <tr>
+                    <td>Please don't eat me</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+ 
     <footer>
         <p>Assignment 1 - Web Programming - Fall 2018</p>
         <div id="goTop">
-            <img src="enovel/views/images/top.svg" alt="top" />
+            <img src="/enovel/views/images/top.svg" alt="top" />
         </div>
     </footer>
 </body>
+</html>

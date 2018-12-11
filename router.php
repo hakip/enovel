@@ -1,4 +1,10 @@
 <?php
+include_once 'config.php';
+include_once "router.php";
+include_once 'controllers/user_controller.php';
+include_once 'controllers/novel_controller.php';
+include_once 'models/user_model.php';
+include_once 'models/novel_model.php';
 class Router {
 	//break url into uri and path
 	function parse(){
@@ -10,16 +16,15 @@ class Router {
 			$this->routeTable($requestString);
 		}
 		else {
-			readfile("views/home.html");
+			readfile("views/home.php");
 			readfile("index.php");
 		}
 	}
 	function routeTable($url){
+		echo "<script> console.log('". $url ."'); </script>";
 		switch (true) {
 			case preg_match("~user/login~",$url):
-				readfile("views/login.html");
-				break;
-			case preg_match("~user/login-process~",$url):
+				readfile("views/login.php");
 				$controller = new UserController;
 				$controller->login();
 				break;
@@ -28,35 +33,27 @@ class Router {
 				$controller->logout();
 				break;
 			case preg_match("~user/register~",$url):
-				readfile("views/register.html");
-				break;
-			case preg_match("~user/register-process~",$url):
+				readfile("views/register.php");
 				$controller = new UserController;
 				$controller->register();
 				break;
-			case preg_match("~user/subscribe~",$url):
+			case preg_match("~user/edit~",$url):
+				readfile("views/edit_account.php");
+				$controller = new UserController;
+				$controller->edit();
+				break;
+			case preg_match("~user/forget_pass~",$url):
+				readfile("views/forget_pass.php");
+				$controller = new UserController;
+				$controller->forgetPassword();
+				break;
+			case preg_match("~user/list_subscipt~",$url):
 				$controller = new UserController;
 				$controller->subscribe();
 				break;
 			case preg_match("~user/unsubscribe~",$url):
 				$controller = new UserController;
 				$controller->unsubscribe();
-				break;
-			case preg_match("~user/info~",$url):
-				$controller = new UserController;
-				$infoID = substr($url,10);
-				$controller->getInfo($infoID);
-				break;
-			case preg_match("~user/edit~",$url):
-				readfile("views/edit_account.html");
-				break;
-			case preg_match("~user/edit-process~",$url):
-				$controller = new UserController;
-				$controller->modify();
-				break;
-			case preg_match("~user/delete~",$url):
-				$controller = new UserController;
-				$controller->deleteAccount();
 				break;
 			//default ABC Ascending
 			case preg_match("~novel/list/~",$url):

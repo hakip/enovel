@@ -13,7 +13,8 @@ class NovelController {
 		}
 	}
 	function getEntryInfo($novel_name) {
-		echo "c";
+		$model = new NovelModel;
+		$model->getEntryInfo("abd");
 	}
 	//for AJAX call only
 	function getListChapter() {

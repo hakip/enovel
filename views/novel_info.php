@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,9 +8,9 @@
     <meta charset="UTF-8">
     <title>Dungeon Defense - Novel details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/info.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="/enovel/views/styles/info.css">
+    <link rel="stylesheet" href="/enovel/views/styles/footer.css">
+    <link rel="stylesheet" href="/enovel/views/styles/header.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -17,9 +20,9 @@
 </head>
 
 <body>
-    <header>
+<header>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="text-white" href="home.html">
+            <a class="text-white" href="/enovel/views/home.php">
                 <p class="mb-0 d-flex justify-content-center"><i class="fas fa-book-open fa-2x pr-2"></i><span id="title" class="d-flex flex-column justify-content-center">Everywhere Novel</span></p>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,35 +36,35 @@
                             <div class="row item">
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="list_novel.html">Action</a></li>
-                                        <li><a href="list_novel.html">Adventure</a></li>
-                                        <li><a href="list_novel.html">Comedy</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Action</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Adventure</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Comedy</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Drama</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Drama</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Fantasy</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Fantasy</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="list_novel.html">Historical</a></li>
-                                        <li><a href="list_novel.html">Horror</a></li>
-                                        <li><a href="list_novel.html">Martial arts</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Historical</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Horror</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Martial arts</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Mature</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Mature</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Mystery</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Mystery</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="list_novel.html">Psychological</a></li>
-                                        <li><a href="list_novel.html">Romance</a></li>
-                                        <li><a href="list_novel.html">Sports</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Psychological</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Romance</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Sports</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Supernatural</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Supernatural</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.html">Tragedy</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Tragedy</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -73,9 +76,9 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"></a>
-                            <a class="dropdown-item" href="list_novel.html">Hot picks</a>
+                            <a class="dropdown-item" href="/enovel/views/list_novel.php">Hot picks</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="list_novel.html">New entries</a>
+                            <a class="dropdown-item" href="/enovel/views/list_novel.php">New entries</a>
                         </div>
                     </li>
                 </ul>
@@ -92,11 +95,16 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"></a>
-                            <a class="dropdown-item" href="login.html">Login</a>
+                            <a class="dropdown-item" href="user/login.php">Login</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="edit_account.html">Edit Account</a>
+                            <a class="dropdown-item" href="user/edit_account.php">Edit Account</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="register.html">Register Account</a>
+                            <a class="dropdown-item" href="user/register.php">Register Account</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="user/logout.php">Logout</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="user/list_subscipt.php">List Subsript</a>
+
                         </div>
                     </li>
                 </ul>
@@ -112,7 +120,7 @@
                         <img src="images/data/Cover-1.png" alt="failed to load">
                         <div class="wrapper">
                             <div class="btn-group-vertical">
-                                <button type="button" class="btn btn-success">Add to list</button>
+                                <input name="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Add to list">
                                 <button type="button" class="btn btn-info">First chapter</button>
                                 <button type="button" class="btn btn-warning">Lasted chapter</button>
                             </div>
@@ -164,76 +172,76 @@
                         <table class="table table-striped col-lg-11">
                             <tbody>
                                 <tr>
-                                    <td><a href="read.html">Chapter 18</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 18</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 17</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 17</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 16</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 16</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 14</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 14</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 13</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 13</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 12</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 12</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 11</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 11</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 10</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 10</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 9</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 9</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 8</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 8</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 7</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 7</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 6</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 6</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 5</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 5</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 4</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 4</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 3</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 3</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 2</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 2</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Chapter 1</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Chapter 1</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="read.html">Prologue</a></td>
-                                    <td><a href="read.html">31/12/2017</a></td>
+                                    <td><a href="read.php">Prologue</a></td>
+                                    <td><a href="read.php">31/12/2017</a></td>
                                 </tr>
                                 </tr>
                                 <td colspan="3">
@@ -253,88 +261,88 @@
                 <div class="col-lg-3">
                     <div class="categories">
                         <h2 class="title col-lg-12">
-                            <a href="list_novel.html">Similar</a>
+                            <a href="list_novel.php">Similar</a>
                         </h2>
                         <table class="table table-striped col-lg-12 menu">
                             <tbody>
                                 <tr>
-                                    <td><a href="info-story.html">Kuro no Maou</a></td>
+                                    <td><a href="info-story.php">Kuro no Maou</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="info-story.html">Release That Witch</a></td>
+                                    <td><a href="info-story.php">Release That Witch</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="info-story.html">I've Been Reincarnated!</a></td>
+                                    <td><a href="info-story.php">I've Been Reincarnated!</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="info-story.html">Goblin Kingdom</a></td>
+                                    <td><a href="info-story.php">Goblin Kingdom</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="info-story.html">God of Crime</a></td>
+                                    <td><a href="info-story.php">God of Crime</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="info-story.html">Harmony</a></td>
+                                    <td><a href="info-story.php">Harmony</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="info-story.html">Hidan no Aria</a></td>
+                                    <td><a href="info-story.php">Hidan no Aria</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="info-story.html">Parasite in Love</a></td>
+                                    <td><a href="info-story.php">Parasite in Love</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="info-story.html">Magi's Grandson</a></td>
+                                    <td><a href="info-story.php">Magi's Grandson</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="info-story.html">Please don't eat me</a></td>
+                                    <td><a href="info-story.php">Please don't eat me</a></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="categories">
                         <h2 class="title col-lg-12">
-                            <a href="../list-chapter/list_comics.html">Genres</a>
+                            <a href="../list-chapter/list_comics.php">Genres</a>
                         </h2>
                         <table class="table table-striped col-lg-12 genre">
                             <tbody>
                                 <tr>
-                                    <td><a href="../list-chapter/list_comics.html">Action</a></td>
-                                    <td><a href="../list-chapter/list_comics.html">Adventure</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Action</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Adventure</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="../list-chapter/list_comics.html">Adult</a></td>
-                                    <td><a href="../list-chapter/list_comics.html">Comedy</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Adult</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Comedy</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="../list-chapter/list_comics.html">Drama</a></td>
-                                    <td><a href="../list-chapter/list_comics.html">Ecchi</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Drama</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Ecchi</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="../list-chapter/list_comics.html">Fantasy</a></td>
-                                    <td><a href="../list-chapter/list_comics.html">Gender Bender</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Fantasy</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Gender Bender</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="../list-chapter/list_comics.html">Harem</a></td>
-                                    <td><a href="../list-chapter/list_comics.html">Historical</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Harem</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Historical</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="../list-chapter/list_comics.html">Horror</a></td>
-                                    <td><a href="../list-chapter/list_comics.html">Martial arts</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Horror</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Martial arts</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="../list-chapter/list_comics.html">Mature</a></td>
-                                    <td><a href="../list-chapter/list_comics.html">Mystery</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Mature</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Mystery</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="../list-chapter/list_comics.html">Psychological</a></td>
-                                    <td><a href="../list-chapter/list_comics.html">Romance</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Psychological</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Romance</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="../list-chapter/list_comics.html">School Life</a></td>
-                                    <td><a href="../list-chapter/list_comics.html">Science Fiction</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">School Life</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Science Fiction</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="../list-chapter/list_comics.html">Sports</a></td>
-                                    <td><a href="../list-chapter/list_comics.html">Supernatural</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Sports</a></td>
+                                    <td><a href="../list-chapter/list_comics.php">Supernatural</a></td>
                                 </tr>
                             </tbody>
                         </table>

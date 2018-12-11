@@ -1,14 +1,19 @@
+<?php
+    session_start();
+    include_once "../models/user_model.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Everywhere Novel - Access your bookshelf everywhere! - Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Account</title>
+
     <link rel="stylesheet" href="/enovel/views/styles/home.css">
     <link rel="stylesheet" href="/enovel/views/styles/footer.css">
-    <link rel="stylesheet" href="enovel/views/styles/header.css">
+    <link rel="stylesheet" href="/enovel/views/styles/header.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -19,7 +24,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="text-white" href="/enovel/views/home.php">
+            <a class="text-white" href="/enovel/home.php">
                 <p class="mb-0 d-flex justify-content-center"><i class="fas fa-book-open fa-2x pr-2"></i><span id="title" class="d-flex flex-column justify-content-center">Everywhere Novel</span></p>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto pr-3">
                     <li class="dropdown nav-item pr-3">
-                        <a href="#" class="nav-link dropdown-toggle menu" data-toggle="dropdown"><i class="fas fa-list-ul"></i> Genre <b class="caret"></b></a>
+                        <a href="/enovel/views/list_novel.php" class="nav-link dropdown-toggle menu" data-toggle="dropdown"><i class="fas fa-list-ul"></i> Genre <b class="caret"></b></a>
                         <ul class="dropdown-menu multi-column columns-3">
                             <div class="row item">
                                 <div class="col-sm-4">
@@ -68,7 +73,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown pr-3">
-                        <a class="nav-link dropdown-toggle menu" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle menu" href="/enovel/views/list_novel.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-list-ul"></i> Novel list
                         </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
@@ -90,7 +95,6 @@
                         <a class="nav-link dropdown-toggle menu" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user-alt"></i> User area
                         </a>
-                        </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"></a>
                             <a class="dropdown-item" href="user/login.php">Login</a>
@@ -102,18 +106,40 @@
                             <a class="dropdown-item" href="user/logout.php">Logout</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="user/list_subscipt.php">List Subsript</a>
-                            <a class="dropdown-item" href="register.php">Register Account</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="logout.php">Logout</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="list_subscipt.php">List Subsript</a>
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <h1>Oops! There is no page with this name on the site. Check your url.</h1>
+    <div class="head1"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Edit Account</h2>
+                        <form class="form-signin" action="" method="POST">
+                            <div class="form-label-group">
+                                <label for="inputEmail">Full name</label>
+                                <input type="text" name="fullname" class="form-control" id="inputAddress" placeholder="Johnson Baby">
+                           </div>
+
+                            <div class="form-label-group">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                
+                            </div>
+                            <hr class="my-4">
+                            <input name="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Submit">
+                           
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <p>Assignment 1 - Web Programming - Fall 2018</p>
         <div id="goTop">
@@ -121,3 +147,4 @@
         </div>
     </footer>
 </body>
+</html>

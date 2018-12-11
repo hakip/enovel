@@ -5,31 +5,55 @@ class UserModel{
 	//Models don't check sessions nor store session informations.
 	public $conn;
 	function __construct(){
-		$servername = "localhost";
-		$username = "root";
-		$password = "";
-		$dbname = "ass2";
-		$this->conn = new mysqli($servername, $username, $password, $dbname);
+		global $servername;
+		global $username;
+		global $password;
+		global $dbname;
+		require_once('./config.php');
+		$this->conn = mysqli_connect($servername, $username, $password, $dbname)
+			or die("Lỗi kết nối cơ sở dữ liệu");
 	}
-	function addNew($id, $password, $email, $optional){
-		//optinal array: ("$info"=>"info_type", "$info"=>"info_type") for ex: ("Alice"=>"Name")
-		//for password, hash and store the hash only. May need to include library.
+	public function register($user)
+	{
+		$sql = "INSERT INTO nguoidung(hoten,email,matkhau,quyen) VALUES('".$user['hoten']."','".$user['email']."','".$user['matkhau']."','".$user['quyen']."')";
+		return mysqli_query($this->conn,$sql);
 	}
-	function modify($old_info,$new_info,$info_type){
-
+	public function get_user_by_email($email)
+	{
+		$sql = "SELECT * FROM nguoidung WHERE email = '$email' OR id ='$email'";
+		return mysqli_query($this->conn,$sql);
 	}
-	function subscribe($id, $novel_name){
-
+	public function get_subscript_by_id($id)
+	{
+		$sql = "SELECT * FROM tuongtac WHERE nguoidung_id ='$id'";
+		return mysqli_query($this->conn,$sql);
 	}
-	function unsubscribe($id, $novel_name){
-
+	public function get_comic_by_id($id)
+	{
+		$sql = "SELECT * FROM truyen WHERE id ='$id'";
+		return mysqli_query($this->conn,$sql);
 	}
-	function getInfo($id){
-
+	public function login($email,$password)
+	{
+		$sql = "SELECT * FROM nguoidung WHERE email = '$email' and matkhau = '$password'";
+		return mysqli_query($this->conn,$sql);
 	}
-	//If possible
-	function deleteAccount($id){
-
+	function forgetPassword($user)
+	{
+		$sql = "UPDATE nguoidung SET matkhau = '".$user['matkhau']."' WHERE email = '".$user['email']."'";
+		return mysqli_query($this->conn,$sql);
+	}
+	function edit($user){
+		$sql = "UPDATE nguoidung SET matkhau = '".$user['matkhau']."',hoten = '".$user['hoten']."' WHERE id = '".$user['id']."'";
+		return mysqli_query($this->conn,$sql);
+	}
+	function subscribe($addS){
+		$sql = "SELECT * FROM tuongtac WHERE truyen_id = '$comic_id' and nguoidung_id = '$user_id'";
+		return mysqli_query($this->conn,$sql);
+	}
+	function unsubscribe($addS){
+		$sql = "DELETE FROM tuongtac WHERE id = '$addS'";
+		return mysqli_query($this->conn,$sql);
 	}
 
 	function login($email, $password){
