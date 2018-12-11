@@ -21,7 +21,16 @@ class NovelModel {
 	}
 	function getEntryList($filter) {
 		if($filter == null) {
-			$sql = 'SELECT * FROM truyen';
+			$sql = 'SELECT * FROM truyen'.' ORDER BY id DESC LIMIT 20';
+			$res = $this->conn->query($sql);
+			return $res;
+		}
+		else {
+			print_r($filter);
+			$filter_arr = explode("=", $filter[0]);
+			$where = " WHERE ".$filter_arr[0]." = '".$filter_arr[1]."'";
+			$sql = 'SELECT * FROM truyen'.$where.' ORDER BY id DESC LIMIT 20';
+			echo $sql;
 			$res = $this->conn->query($sql);
 			return $res;
 		}

@@ -89,8 +89,9 @@ class Router {
 			// click filter on list.html send get request.
 			case preg_match_all("~novel/list\?filter=y&~m",$url,$match):
 				$controller = new NovelController;
-				$filter=["filter"=>"yes"];
-				$controller->getEntryList($filter);
+				$filterStr = substr($url, 20);
+				$filters = explode("&", $filterStr);
+				$controller->getEntryList($filters);
 				break;
 			case preg_match("#novel/[^/]+/chap[^/]+#",$url):
 				$controller = new NovelController;

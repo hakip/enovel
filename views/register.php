@@ -37,35 +37,35 @@ include_once "../models/user_model.php"
                             <div class="row item">
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="/enovel/views/list_novel.php">Action</a></li>
-                                        <li><a href="/enovel/views/list_novel.php">Adventure</a></li>
-                                        <li><a href="/enovel/views/list_novel.php">Comedy</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=action">Action</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=adventure">Adventure</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=comedy">Comedy</a></li>
                                         <hr class="my-1">
-                                        <li><a href="/enovel/views/list_novel.php">Drama</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=drama">Drama</a></li>
                                         <hr class="my-1">
-                                        <li><a href="/enovel/views/list_novel.php">Fantasy</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=fantasy">Fantasy</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="/enovel/views/list_novel.php">Historical</a></li>
-                                        <li><a href="/enovel/views/list_novel.php">Horror</a></li>
-                                        <li><a href="/enovel/views/list_novel.php">Martial arts</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=historical">Historical</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=horror">Horror</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=martialarts">Martial arts</a></li>
                                         <hr class="my-1">
-                                        <li><a href="/enovel/views/list_novel.php">Mature</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=mature">Mature</a></li>
                                         <hr class="my-1">
-                                        <li><a href="/enovel/views/list_novel.php">Mystery</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=mystery">Mystery</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="/enovel/views/list_novel.php">Psychological</a></li>
-                                        <li><a href="/enovel/views/list_novel.php">Romance</a></li>
-                                        <li><a href="/enovel/views/list_novel.php">Sports</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=psychological">Psychological</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=romance">Romance</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=sports">Sports</a></li>
                                         <hr class="my-1">
-                                        <li><a href="/enovel/views/list_novel.php">Supernatural</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=supernatural">Supernatural</a></li>
                                         <hr class="my-1">
-                                        <li><a href="/enovel/views/list_novel.php">Tragedy</a></li>
+                                        <li><a href="/enovel/novel/list?filter=y&theloai=tragedy">Tragedy</a></li>
                                     </ul>
                                 </div>
                             </div>
