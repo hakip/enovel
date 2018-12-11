@@ -19,6 +19,7 @@
 					    <label for="exampleInputPassword1">Password</label>
 					    <input type="password" name="password" class="form-control" placeholder="Password" required>
 					  </div>
+					  <hr/>
 					  <button type="submit" class="btn btn-outline-primary">Submit</button>
 					</form>
 	      </div>';

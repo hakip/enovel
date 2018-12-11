@@ -1,6 +1,5 @@
 <?php
 include_once 'config.php';
-include_once "router.php";
 include_once 'controllers/user_controller.php';
 include_once 'controllers/novel_controller.php';
 include_once 'models/user_model.php';
@@ -117,6 +116,7 @@ class Router {
 				$controller = new AdminController;
 				$controller->checkSession();
 				break;
+			// users cms
 			case preg_match("~admin/users~", $url):
 				$controller = new AdminUserController;
 				$controller->index();
@@ -139,6 +139,31 @@ class Router {
 				break;
 			case preg_match("~admin/user_update~", $url):
 				$controller = new AdminUserController;
+				$controller->updaterecord();
+				break;
+			// novels cms
+			case preg_match("~admin/novels~", $url):
+				$controller = new AdminNovelController;
+				$controller->index();
+				break;
+			case preg_match("~admin/novel_new~", $url):
+				$controller = new AdminNovelController;
+				$controller->newrecord();
+				break;
+			case preg_match("~admin/novel_create~", $url):
+				$controller = new AdminNovelController;
+				$controller->createrecord();
+				break;
+			case preg_match("~admin/delete_novel~", $url):
+				$controller = new AdminNovelController;
+				$controller->deleterecord();
+				break;
+			case preg_match("~admin/novel_edit~", $url):
+				$controller = new AdminNovelController;
+				$controller->editrecord();
+				break;
+			case preg_match("~admin/novel_update~", $url):
+				$controller = new AdminNovelController;
 				$controller->updaterecord();
 				break;
 
