@@ -115,7 +115,7 @@ class UserController {
 		{
 			echo '<script language="javascript">';
 			echo 'alert("You must login first");';  
-			echo 'window.location.href = "/enovel/views/login.php";';
+			echo 'window.location.href = "/enovel/user/login.php";';
 			echo '</script>';
 		}
 		if (isset($_POST['submit'])) 
