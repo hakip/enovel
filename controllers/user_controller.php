@@ -21,6 +21,7 @@ class UserController {
 						echo 'alert("Login success");';  
 						echo 'window.location.href = "/enovel";';
 						echo '</script>';	
+
 						
 					}
 					else {
