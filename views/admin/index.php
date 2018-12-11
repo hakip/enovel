@@ -29,6 +29,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto pr-3">
                   <li class="nav-item">
+                        <a href="#" onclick="ajaxChapterIndex();" class="nav-link menu"><i class="fas fa-book"></i> Chapters</b></a>
+                  </li>
+                  <li class="nav-item">
                         <a href="#" onclick="ajaxNovelIndex();" class="nav-link menu"><i class="fas fa-book"></i> Novels</b></a>
                   </li>
                   <li class="nav-item">
@@ -158,6 +161,16 @@
           }
         });
       }
+      //--------Chapter-----
+      function ajaxChapterIndex(){
+        $.ajax({
+          url      : 'admin/chapters',
+          method   : 'get', 
+          success  : function(response){
+            $('#contentTable').empty().append(response);
+          }
+        });
+      };
     </script>
 
 <style>

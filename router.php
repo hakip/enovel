@@ -169,6 +169,11 @@ class Router {
 				$controller = new AdminNovelController;
 				$controller->updaterecord();
 				break;
+			// chapters cms
+			case preg_match("~admin/chapters~", $url):
+				$controller = new AdminChaptersController;
+				$controller->index();
+				break;
 
 
 			default:

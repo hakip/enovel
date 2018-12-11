@@ -36,7 +36,7 @@
 		public function createrecord(){
 			$fullname = isset($_POST['fullname'])? $_POST['fullname']: '';
 			$email = isset($_POST['email'])? $_POST['email']: '';
-			$password = isset($_POST['password'])? $_POST['password']: '';
+			$password = isset($_POST['password'])? md5($_POST['password']): '';
 			$usermodel = new UserModel();
 			$user = $usermodel->a_create_user($fullname, $email, $password);
 			if ($user) {
@@ -66,7 +66,7 @@
 			$id = isset($_POST['id'])? $_POST['id']: '';
 			$fullname = isset($_POST['fullname'])? $_POST['fullname']: '';
 			$email = isset($_POST['email'])? $_POST['email']: '';
-			$current_password = isset($_POST['current_password'])? $_POST['current_password']: '';
+			$current_password = isset($_POST['current_password'])? md5($_POST['current_password']): '';
 			$new_password = isset($_POST['new_password'])? $_POST['new_password']: '';
 			$usermodel = new UserModel();
 			if ( $current_password == "" ) {
