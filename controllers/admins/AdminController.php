@@ -10,7 +10,7 @@
 			$password = isset($_POST['password'])? $_POST['password']: '';
 			if ($email != '' && $password != '') {
 				$usermodel = new UserModel();
-				$admin = $usermodel->login($email, $password );
+				$admin = $usermodel->admin_login($email, $password );
 				if($admin)
 	      {
 					session_start();

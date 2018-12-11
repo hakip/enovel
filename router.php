@@ -21,7 +21,6 @@ class Router {
 		}
 	}
 	function routeTable($url){
-		echo "<script> console.log('". $url ."'); </script>";
 		switch (true) {
 			case preg_match("~user/login~",$url):
 				readfile("views/login.php");

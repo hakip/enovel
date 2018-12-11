@@ -33,7 +33,7 @@ class UserModel{
 		$sql = "SELECT * FROM truyen WHERE id ='$id'";
 		return mysqli_query($this->conn,$sql);
 	}
-	public function login($email,$password)
+	public function a_login($email,$password)
 	{
 		$sql = "SELECT * FROM nguoidung WHERE email = '$email' and matkhau = '$password'";
 		return mysqli_query($this->conn,$sql);
@@ -56,7 +56,7 @@ class UserModel{
 		return mysqli_query($this->conn,$sql);
 	}
 
-	function login($email, $password){
+	function admin_login($email, $password){
     $sql = 'SELECT * FROM `nguoidung` WHERE quyen = "admin" and email = "'.$email.'" and matkhau = "'.$password.'" ';
     $result = $this->conn-> query($sql);
     return $admin = mysqli_fetch_assoc($result);
