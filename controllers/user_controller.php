@@ -17,6 +17,7 @@ class UserController {
 					$row = mysqli_fetch_array($usermodel->get_user_by_email($_POST['email']));
 					if ($row['matkhau'] == md5($_POST['password'])) {
 						$_SESSION['nguoidung'] = $row['id'];
+						echo '<script language="javascript">';
 						echo 'alert("Login success");';  
 						echo 'window.location.href = "/enovel";';
 						echo '</script>';	
@@ -24,7 +25,7 @@ class UserController {
 					}
 					else {
 						echo '<script language="javascript">';
-						echo 'alert("Error Password")';  
+						echo 'alert("Error Password");';  
 						echo '</script>';
 					}		
 				}
@@ -59,20 +60,20 @@ class UserController {
 					);
 					$usermodel->register($user);
 					echo '<script language="javascript">';
-					echo 'alert("Register success")'; 
-					echo 'window.location.href = "/enovel";'; 
+					echo 'alert("Register success");';  
+					echo 'window.location.href = "/enovel";';
 					echo '</script>';
 				}
 				else {
 					echo '<script language="javascript">';
-					echo 'alert("Account aldready register")';  
+					echo 'alert("Account aldready register");';  
 					echo 'window.location.href = "/enovel";';
 					echo '</script>';
 				}
 			}
 			else {
 				echo '<script language="javascript">';
-				echo 'alert("Please fill all of form ")';  
+				echo 'alert("Please fill all of form ");';  
 				echo '</script>';
 			}
 			
@@ -92,19 +93,19 @@ class UserController {
 					);
 					$usermodel->forgetPassword($user);
 					echo '<script language="javascript">';
-					echo 'alert("Change password success")';  
+					echo 'alert("Change password success");';  
 					echo 'window.location.href = "/enovel.php";';
 					echo '</script>';
 				}
 				else {
 					echo '<script language="javascript">';
-					echo 'alert("Account not exist")';  
+					echo 'alert("Account not exist");';  
 					echo '</script>';
 				}
 			}
 			else {
 				echo '<script language="javascript">';
-				echo 'alert("Please fill all of form ")';  
+				echo 'alert("Please fill all of form ");';  
 				echo '</script>';
 			}
 		} 
@@ -130,19 +131,19 @@ class UserController {
 					);
 					$usermodel->edit($user);
 					echo '<script language="javascript">';
-					echo 'alert("Edit success")'; 
+					echo 'alert("Edit success");'; 
 					echo 'window.location.href = "/enovel";'; 
 					echo '</script>';
 				}
 				else {
 					echo '<script language="javascript">';
-					echo 'alert("Account not exist, you need to check email or register")'; 
+					echo 'alert("Account not exist, you need to check email or register");'; 
 					echo '</script>';
 				}
 			}
 			else {
 				echo '<script language="javascript">';
-				echo 'alert("Please fill all of form ")';  
+				echo 'alert("Please fill all of form ");';  
 				echo '</script>';
 			}
 	}
