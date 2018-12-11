@@ -16,6 +16,7 @@
 			            <th scope="col">Image</th>
 			            <th scope="col">Description</th>
 			            <th scope="col">Created at</th>
+			            <th scope="col">Updated at</th>
 			            <th scope="col">Status</th>
 			            <th scope="col">Author</th>
 			            <th scope="col">Action</th>
@@ -30,6 +31,7 @@
 									      <td><img src="'.$row{'url_anh'}.'" width="130" height="150" alt="url-image-wrong"/></td>
 									      <td>'.$row{'mota'}.'</td>
 									      <td>'.$row{'ngaytao'}.'</td>
+									      <td>'.$row{'ngaysua'}.'</td>
 									      <td>'.(($row{'trangthai'})? '<span class="text-success">Active</span>':'<span class="text-secondary">Inactive</span>').'</td>
 									      <td>'.$row{'tentacgia'}.'</td>
 

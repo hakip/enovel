@@ -8,6 +8,7 @@ CREATE TABLE chuong (
     ten text NOT NULL,
     noidung text NOT NULL,
     ngaytao date NOT NULL,
+    ngaysua date NOT NULL,
     truyen_id int NOT NULL,
     CONSTRAINT chuong_pk PRIMARY KEY (id)
 );

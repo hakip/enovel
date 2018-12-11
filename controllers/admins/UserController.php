@@ -66,20 +66,11 @@
 			$id = isset($_POST['id'])? $_POST['id']: '';
 			$fullname = isset($_POST['fullname'])? $_POST['fullname']: '';
 			$email = isset($_POST['email'])? $_POST['email']: '';
-			$current_password = isset($_POST['current_password'])? md5($_POST['current_password']): '';
 			$new_password = isset($_POST['new_password'])? $_POST['new_password']: '';
 			$usermodel = new UserModel();
-			if ( $current_password == "" ) {
-				$result = $usermodel->a_update_user($id, $fullname, $email, "");
-			}else{
-				$result = $usermodel->a_get_user($id);
-				$user = mysqli_fetch_array($result);
-				if ($user['matkhau'] == $current_password) {
-					$result = $usermodel->a_update_user($id, $fullname, $email, $new_password);
-				}else{
-					$result = false;
-				}
-			}
+			$result = $usermodel->a_get_user($id);
+			$user = mysqli_fetch_array($result);
+			$result = $usermodel->a_update_user($id, $fullname, $email, $new_password);
 			if ($result) {
 				echo '<script>
 								window.location.href = "dashboard#rel.in.user";
