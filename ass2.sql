@@ -1,10 +1,10 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2018-12-03 12:31:26.739
+-- Last modification date: 2018-12-11 19:37:30.674
 
 -- tables
 -- Table: chuong
 CREATE TABLE chuong (
-    id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
     ten text NOT NULL,
     noidung text NOT NULL,
     ngaytao date NOT NULL,
@@ -22,31 +22,23 @@ CREATE TABLE nguoidung (
     CONSTRAINT nguoidung_pk PRIMARY KEY (id)
 );
 
--- Table: theloai
-CREATE TABLE theloai (
-    id int NOT NULL,
-    ten varchar(100) NOT NULL,
-    mota text NOT NULL,
-    CONSTRAINT theloai_pk PRIMARY KEY (id)
-);
-
 -- Table: truyen
 CREATE TABLE truyen (
     id int NOT NULL AUTO_INCREMENT,
+    url_anh text NOT NULL,
     ten varchar(100) NOT NULL,
     mota text NOT NULL,
     ngaytao date NOT NULL,
+    ngaysua date NOT NULL,
     trangthai int NOT NULL,
     tentacgia varchar(50) NOT NULL,
-    theloai_id int NOT NULL,
     CONSTRAINT Id PRIMARY KEY (id)
 );
 
 -- Table: tuongtac
 CREATE TABLE tuongtac (
-    id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
     luotxem int NOT NULL,
-    yeuthich int NOT NULL,
     truyen_id int NOT NULL,
     nguoidung_id int NOT NULL,
     CONSTRAINT tuongtac_pk PRIMARY KEY (id)
@@ -57,10 +49,6 @@ CREATE TABLE tuongtac (
 ALTER TABLE chuong ADD CONSTRAINT chuong_truyen FOREIGN KEY chuong_truyen (truyen_id)
     REFERENCES truyen (id);
 
--- Reference: truyen_theloai (table: truyen)
-ALTER TABLE truyen ADD CONSTRAINT truyen_theloai FOREIGN KEY truyen_theloai (theloai_id)
-    REFERENCES theloai (id);
-
 -- Reference: tuongtac_nguoidung (table: tuongtac)
 ALTER TABLE tuongtac ADD CONSTRAINT tuongtac_nguoidung FOREIGN KEY tuongtac_nguoidung (nguoidung_id)
     REFERENCES nguoidung (id);
@@ -68,7 +56,11 @@ ALTER TABLE tuongtac ADD CONSTRAINT tuongtac_nguoidung FOREIGN KEY tuongtac_nguo
 -- Reference: tuongtac_truyen (table: tuongtac)
 ALTER TABLE tuongtac ADD CONSTRAINT tuongtac_truyen FOREIGN KEY tuongtac_truyen (truyen_id)
     REFERENCES truyen (id);
+
 -- add account Admin
+
 INSERT INTO `nguoidung` (`id`, `hoten`, `email`, `matkhau`, `quyen`) VALUES (NULL, 'admin', 'admin@info.sg', '123123', 'admin');
+    
+
 -- End of file.
 

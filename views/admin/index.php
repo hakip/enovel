@@ -29,6 +29,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto pr-3">
                   <li class="nav-item">
+                        <a href="#" onclick="ajaxNovelIndex();" class="nav-link menu"><i class="fas fa-book"></i> Novels</b></a>
+                  </li>
+                  <li class="nav-item">
                         <a href="#" onclick="ajaxUserIndex();" class="nav-link menu"><i class="fas fa-users"></i> Users</b></a>
                   </li>
                 </ul>
@@ -54,7 +57,6 @@
       <div class="modal fade" id="newrecord" tabindex="-1" role="dialog" aria-labelledby="newrecordLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content" id="form_new">
-            
           </div>
         </div>
       </div>
@@ -67,8 +69,14 @@
           }else if (window.location.hash === "#err.up.user"){
             alert("Update user failed! You can try again!")
             ajaxUserIndex();
+          }else if (window.location.hash === "#rel.in.novel") {
+            ajaxNovelIndex();
+          }else if (window.location.hash === "#err.up.novel"){
+            alert("Update novel failed! You can try again!")
+            ajaxNovelIndex();
           }
       });
+      // ----------- User -----------
       function ajaxUserIndex(){
         $.ajax({
           url      : 'admin/users',
@@ -103,6 +111,47 @@
           url      : 'admin/user_edit',
           method   : 'post',
           data     : {id: $($(_this.closest('tr')).find("th[name=id_user]")[0]).data('id')},
+          success  : function(data){
+            $('#form_new').empty().append(data);
+            $('#newrecord').modal("toggle");
+          }
+        });
+      }
+      //----------Novel----------
+      function ajaxNovelIndex(){
+        $.ajax({
+          url      : 'admin/novels',
+          method   : 'get', 
+          success  : function(response){
+            $('#contentTable').empty().append(response);
+          }
+        });
+      };
+      function newNovel(){
+        $.ajax({
+          url      : 'admin/novel_new',
+          method   : 'get', 
+          success  : function(data){
+            $('#form_new').empty().append(data);
+            $('#newrecord').modal("toggle");
+          }
+        });
+      }
+      function delete_novel(_this){
+        $.ajax({
+          url      : 'admin/delete_novel',
+          method   : 'post',
+          data     : {id: $($(_this.closest('tr')).find("th[name=id_novel]")[0]).data('id')},
+          success  : function(data){
+            ajaxNovelIndex();
+          }
+        });
+      }
+      function edit_novel(_this){
+        $.ajax({
+          url      : 'admin/novel_edit',
+          method   : 'post',
+          data     : {id: $($(_this.closest('tr')).find("th[name=id_novel]")[0]).data('id')},
           success  : function(data){
             $('#form_new').empty().append(data);
             $('#newrecord').modal("toggle");

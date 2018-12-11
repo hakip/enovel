@@ -24,6 +24,7 @@
 					    <label for="exampleInputPassword1">New password</label>
 					    <input type="password" name="new_password" class="form-control" placeholder="New password">
 					  </div>
+					  <hr/>
 					  <button type="submit" class="btn btn-outline-primary">Submit</button>
 					</form>
 	      </div>';
