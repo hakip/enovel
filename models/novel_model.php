@@ -20,13 +20,23 @@ class NovelModel {
 
 	}
 	function getEntryList($filter) {
-		
+		if($filter == null) {
+			$sql = 'SELECT * FROM truyen';
+			$res = $this->conn->query($sql);
+			return $res;
+		}
 	}
 	function getEntryInfo($novel_name) {
 		$sql = 'SELECT * FROM truyen';
 		$res = $this->conn->query($sql);
 		echo $sql;
 		print_r($res);
+	}
+	function getViewCount($novel_id){
+		$sql = 'SELECT luotxem FROM tuongtac WHERE truyen_id ='.$novel_id;
+		$res = $this->conn->query($sql);
+		$rows = mysqli_fetch_row($res);
+		return $rows[0];
 	}
 	//for AJAX call only
 	function getListChapter() {

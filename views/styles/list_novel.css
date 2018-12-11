@@ -24,6 +24,12 @@
 .alink {
   color: black;
 }
+#viewframe{
+  align: center;
+  border: 0;
+  margin: auto;
+  width: 1000px;
+}
 .card-header {
   font-family: arial black;
 }

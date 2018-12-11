@@ -57,7 +57,10 @@ class Router {
 			//default ABC Ascending
 			case preg_match("~novel/list/~",$url):
 				$controller = new NovelController;
-				$controller->getEntryList($filter);
+				$controller->getEntryList();
+				break;
+			case preg_match("~viewframe~", $url):
+				readfile("views/viewframe.php");
 				break;
 			//hot picks
 			case preg_match("~novel/list\?filter=hot~",$url):

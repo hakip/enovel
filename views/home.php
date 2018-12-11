@@ -112,7 +112,7 @@
     <div class="new-story">
         <div class="container">
             <h2 class="title">
-                <a href="/enovel/views/list_novel.php">New entry >></a>
+                <a href="/enovel/novel/list/">New entry >></a>
             </h2>
             <div class="new-story__body">
                 <div class="row m-0">
