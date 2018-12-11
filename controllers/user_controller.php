@@ -61,7 +61,7 @@ class UserController {
 					$usermodel->register($user);
 					echo '<script language="javascript">';
 					echo 'alert("Register success");';  
-					echo 'window.location.href = "/enovel";';
+					echo 'window.location.href = "/user/login";';
 					echo '</script>';
 				}
 				else {
@@ -94,7 +94,7 @@ class UserController {
 					$usermodel->forgetPassword($user);
 					echo '<script language="javascript">';
 					echo 'alert("Change password success");';  
-					echo 'window.location.href = "/enovel";';
+					echo 'window.location.href = "/user/login";';
 					echo '</script>';
 				}
 				else {
@@ -103,21 +103,9 @@ class UserController {
 					echo '</script>';
 				}
 			}
-			else {
-				echo '<script language="javascript">';
-				echo 'alert("Please fill all of form ");';  
-				echo '</script>';
-			}
 		} 
 	}
 	function edit(){
-		if(!$_SESSION['nguoidung'])
-		{
-			echo '<script language="javascript">';
-			echo 'alert("You must login first");';  
-			echo 'window.location.href = "/enovel/user/login.php";';
-			echo '</script>';
-		}
 		if (isset($_POST['submit'])) 
 			
 			if ($_POST['fullname'] != "" && $_POST['password'] != "" ) {
@@ -140,11 +128,6 @@ class UserController {
 					echo 'alert("Account not exist, you need to check email or register");'; 
 					echo '</script>';
 				}
-			}
-			else {
-				echo '<script language="javascript">';
-				echo 'alert("Please fill all of form ");';  
-				echo '</script>';
 			}
 	}
 	function addSubscript()
