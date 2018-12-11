@@ -5,7 +5,9 @@ class UserController {
 	//Sessions are temporary and will not be put to database nor models.
 	//Controllers need to check session_id before further processes.
 	//Router most of the time doesn't send any data. Get data via $_GET/POST, etc...
+
 	function login(){
+		
 		if (isset($_POST['submit'])) 
 			
 			if ($_POST['email'] != "" && $_POST['password'] != "" ) {
@@ -15,15 +17,23 @@ class UserController {
 					$row = mysqli_fetch_array($usermodel->get_user_by_email($_POST['email']));
 					if ($row['matkhau'] == md5($_POST['password'])) {
 						$_SESSION['nguoidung'] = $row['id'];
-						echo "Đăng nhập thành công";
+						echo '<script language="javascript">';
+						echo 'alert("Login success");';  
+						echo 'window.location.href = "/enovel";';
+						echo '</script>';	
 						
 					}
 					else {
-						echo "Sai mật khẩu";
+						echo '<script language="javascript">';
+						echo 'alert("Error Password")';  
+						echo '</script>';
 					}		
 				}
 				else {
-					echo "Tài khoản không tồn tại";
+					echo '<script language="javascript">';
+					echo 'alert("Account not exist, You must register");';  
+					echo 'window.location.href = "/enovel/user/register.php";';
+					echo '</script>';
 				}
 			}
 		}
@@ -49,41 +59,65 @@ class UserController {
 						'quyen' => "member"
 					);
 					$usermodel->register($user);
-					echo "Đăng kí thành công";
+					echo '<script language="javascript">';
+					echo 'alert("Register success")'; 
+					echo 'window.location.href = "/enovel";'; 
+					echo '</script>';
 				}
 				else {
-					echo "Tài khoản bạn đã đăng kí rồi";
+					echo '<script language="javascript">';
+					echo 'alert("Account aldready register")';  
+					echo 'window.location.href = "/enovel";';
+					echo '</script>';
 				}
 			}
 			else {
-				echo "Chưa nhập đủ thông tin";
+				echo '<script language="javascript">';
+				echo 'alert("Please fill all of form ")';  
+				echo '</script>';
 			}
 			
 		
 	}
 	function forgetPassword()
 	{
-		if (isset($_POST['submit'])) 
+		if (isset($_POST['submit'])) {
 			if ($_POST['email'] != "" && $_POST['password'] != "" ) {
 				$usermodel = new UserModel();
 				$r = mysqli_num_rows($usermodel->get_user_by_email($_POST['email']));
 				if ($r!=0) {
+					echo "<script> console.log('here'); </script>";
 					$user = array(
 						'email' => $_POST['email'],
 						'matkhau' => md5($_POST['password'])
 					);
 					$usermodel->forgetPassword($user);
-					echo "Đổi mật khẩu thành công";
+					echo '<script language="javascript">';
+					echo 'alert("Change password success")';  
+					echo 'window.location.href = "/enovel.php";';
+					echo '</script>';
 				}
 				else {
-					echo "Tài khoản không tồn tại";
+					echo '<script language="javascript">';
+					echo 'alert("Account not exist")';  
+					echo '</script>';
 				}
 			}
 			else {
-				echo "Chưa nhập đủ thông tin";
+				echo '<script language="javascript">';
+				echo 'alert("Please fill all of form ")';  
+				echo '</script>';
 			}
+		} 
 	}
 	function edit(){
+		if(!$_SESSION['nguoidung'])
+		{
+			echo '<script language="javascript">';
+			echo 'alert("You must login first");';  
+			echo 'window.location.href = "/enovel/views/login.php";';
+			echo '</script>';
+		}
 		if (isset($_POST['submit'])) 
 			
 			if ($_POST['fullname'] != "" && $_POST['password'] != "" ) {
@@ -96,30 +130,69 @@ class UserController {
 						'matkhau' => md5($_POST['password'])
 					);
 					$usermodel->edit($user);
-					echo "Chỉnh sửa thành công";
+					echo '<script language="javascript">';
+					echo 'alert("Edit success")'; 
+					echo 'window.location.href = "/enovel";'; 
+					echo '</script>';
 				}
 				else {
-					echo "Tài khoản không tồn tại";
+					echo '<script language="javascript">';
+					echo 'alert("Account not exist, you need to check email or register")'; 
+					echo '</script>';
 				}
 			}
 			else {
-				echo "Chưa nhập đủ thông tin";
+				echo '<script language="javascript">';
+				echo 'alert("Please fill all of form ")';  
+				echo '</script>';
 			}
 	}
+	function addSubscript()
+	{
+		# code...
+	}
 	function subscribe(){
+		if(!$_SESSION['nguoidung'])
+		{
+			echo '<script language="javascript">';
+			echo 'alert("You must login first");';  
+			echo 'window.location.href = "/enovel/user/login.php";';
+			echo '</script>';
+		}
+			$usermodel = new UserModel();
+			$sub = mysqli_num_rows($usermodel->get_subscript_by_id($_SESSION['nguoidung'])); // cot Tuong tac
+			if ($sub != 0 ) {
+				$subarray = mysqli_fetch_array($usermodel->get_subscript_by_id($_SESSION['nguoidung']));//tra ve mang tuong tac
+				$_SESSION['tuongtac'] = $subarray['id'];
+				echo $_SESSION['tuongtac'];
+				exit();
+				// while ($subarray) {
+					
+				// 	$namecomics = mysqli_fetch_array($usermodel->get_comic_by_id($subarray['truyen_id']));//tra ve mang truyen
+				// 	$_SESSION['truyen'] = $namecomics['id'];
+				// }				
+				// $addS = array(
+				// 	'id' => $sub['tuongtac'],
+				// 	'truyen_id' => $_SESSION['truyen'],
+				// 	'nguoidung_id' => $_SESSION['nguoidung'],
+				// 	'tentruyen' => $q['ten']
+				// );
+				// $usermodel->subscribe($addS);
+			}
+		}
+		
 
-	}
 	function unsubscribe(){
+		if (isset($_POST['submit'])) {
+			$usermodel = new UserModel();
+			$usermodel->unsubscribe($_SESSION['tuongtac']);
+				echo '<script language="javascript">';
+				echo 'alert("Delete Subscribe success");';  
+				echo 'window.location.href = "/enovel/user/list_subscipt";';
+				echo '</script>';
+			}
+		}
+	
+	}
 
-	}
-	function getInfo($id){
-		echo $id;
-	}
-	function removeList(){
-
-	}
-	//If possible
-	function deleteAccount(){
-	}
-}
 ?>

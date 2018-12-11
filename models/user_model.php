@@ -24,36 +24,37 @@ class UserModel{
 		$sql = "SELECT * FROM nguoidung WHERE email = '$email' OR id ='$email'";
 		return mysqli_query($this->conn,$sql);
 	}
+	public function get_subscript_by_id($id)
+	{
+		$sql = "SELECT * FROM tuongtac WHERE nguoidung_id ='$id'";
+		return mysqli_query($this->conn,$sql);
+	}
+	public function get_comic_by_id($id)
+	{
+		$sql = "SELECT * FROM truyen WHERE id ='$id'";
+		return mysqli_query($this->conn,$sql);
+	}
 	public function login($email,$password)
 	{
 		$sql = "SELECT * FROM nguoidung WHERE email = '$email' and matkhau = '$password'";
 		return mysqli_query($this->conn,$sql);
 	}
-	function addNew($id, $password, $email, $optional){
-		//optinal array: ("$info"=>"info_type", "$info"=>"info_type") for ex: ("Alice"=>"Name")
-		//for password, hash and store the hash only. May need to include library.
-	}
 	function forgetPassword($user)
 	{
-		$sql = "UPDATE nguoidung SET matkhau = '".$user['matkhau']."' WHERE id = '".$user['id']."'";
+		$sql = "UPDATE nguoidung SET matkhau = '".$user['matkhau']."' WHERE email = '".$user['email']."'";
 		return mysqli_query($this->conn,$sql);
 	}
 	function edit($user){
 		$sql = "UPDATE nguoidung SET matkhau = '".$user['matkhau']."',hoten = '".$user['hoten']."' WHERE id = '".$user['id']."'";
 		return mysqli_query($this->conn,$sql);
 	}
-	function subscribe($id, $novel_name){
-
+	function subscribe($addS){
+		$sql = "SELECT * FROM tuongtac WHERE truyen_id = '$comic_id' and nguoidung_id = '$user_id'";
+		return mysqli_query($this->conn,$sql);
 	}
-	function unsubscribe($id, $novel_name){
-
-	}
-	function getInfo($id){
-
-	}
-	//If possible
-	function deleteAccount($id){
-
+	function unsubscribe($addS){
+		$sql = "DELETE FROM tuongtac WHERE id = '$addS'";
+		return mysqli_query($this->conn,$sql);
 	}
 }
 ?>

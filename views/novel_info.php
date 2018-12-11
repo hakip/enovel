@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,9 +8,9 @@
     <meta charset="UTF-8">
     <title>Dungeon Defense - Novel details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="views/styles/info.css">
-    <link rel="stylesheet" href="views/styles/footer.css">
-    <link rel="stylesheet" href="views/styles/header.css">
+    <link rel="stylesheet" href="/enovel/views/styles/info.css">
+    <link rel="stylesheet" href="/enovel/views/styles/footer.css">
+    <link rel="stylesheet" href="/enovel/views/styles/header.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -17,9 +20,9 @@
 </head>
 
 <body>
-    <header>
+<header>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="text-white" href="home.php">
+            <a class="text-white" href="/enovel/views/home.php">
                 <p class="mb-0 d-flex justify-content-center"><i class="fas fa-book-open fa-2x pr-2"></i><span id="title" class="d-flex flex-column justify-content-center">Everywhere Novel</span></p>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,35 +36,35 @@
                             <div class="row item">
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="list_novel.php">Action</a></li>
-                                        <li><a href="list_novel.php">Adventure</a></li>
-                                        <li><a href="list_novel.php">Comedy</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Action</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Adventure</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Comedy</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.php">Drama</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Drama</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.php">Fantasy</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Fantasy</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="list_novel.php">Historical</a></li>
-                                        <li><a href="list_novel.php">Horror</a></li>
-                                        <li><a href="list_novel.php">Martial arts</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Historical</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Horror</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Martial arts</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.php">Mature</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Mature</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.php">Mystery</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Mystery</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="list_novel.php">Psychological</a></li>
-                                        <li><a href="list_novel.php">Romance</a></li>
-                                        <li><a href="list_novel.php">Sports</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Psychological</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Romance</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Sports</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.php">Supernatural</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Supernatural</a></li>
                                         <hr class="my-1">
-                                        <li><a href="list_novel.php">Tragedy</a></li>
+                                        <li><a href="/enovel/views/list_novel.php">Tragedy</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -73,9 +76,9 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"></a>
-                            <a class="dropdown-item" href="list_novel.php">Hot picks</a>
+                            <a class="dropdown-item" href="/enovel/views/list_novel.php">Hot picks</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="list_novel.php">New entries</a>
+                            <a class="dropdown-item" href="/enovel/views/list_novel.php">New entries</a>
                         </div>
                     </li>
                 </ul>
@@ -92,13 +95,15 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"></a>
-                            <a class="dropdown-item" href="login.php">Login</a>
+                            <a class="dropdown-item" href="user/login.php">Login</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="edit_account.php">Edit Account</a>
+                            <a class="dropdown-item" href="user/edit_account.php">Edit Account</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="register.php">Register Account</a>
+                            <a class="dropdown-item" href="user/register.php">Register Account</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="logout.php">Logout</a>
+                            <a class="dropdown-item" href="user/logout.php">Logout</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="user/list_subscipt.php">List Subsript</a>
                         </div>
                     </li>
                 </ul>
@@ -114,7 +119,7 @@
                         <img src="images/data/Cover-1.png" alt="failed to load">
                         <div class="wrapper">
                             <div class="btn-group-vertical">
-                                <button type="button" class="btn btn-success">Add to list</button>
+                                <input name="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Add to list">
                                 <button type="button" class="btn btn-info">First chapter</button>
                                 <button type="button" class="btn btn-warning">Lasted chapter</button>
                             </div>

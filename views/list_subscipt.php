@@ -1,13 +1,11 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Login</title>
+    <meta charset="UTF-8">
+    <title>Everywhere Novel - Access your bookshelf everywhere! - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <link rel="stylesheet" href="/enovel/views/styles/home.css">
     <link rel="stylesheet" href="/enovel/views/styles/footer.css">
     <link rel="stylesheet" href="/enovel/views/styles/header.css">
@@ -19,7 +17,7 @@
 </head>
 
 <body>
-<header>
+    <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="text-white" href="/enovel/views/home.php">
                 <p class="mb-0 d-flex justify-content-center"><i class="fas fa-book-open fa-2x pr-2"></i><span id="title" class="d-flex flex-column justify-content-center">Everywhere Novel</span></p>
@@ -109,38 +107,31 @@
             </div>
         </nav>
     </header>
-    <div class="head1"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card card-signin my-5">
-                    <div class="card-body">
-                        <h2 class="card-title text-center">Sign In</h2>
-                        <form class="form-signin" action="" method="POST">
-                            <div class="form-label-group">
-                                <label for="inputEmail">Email address</label>
-                                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                           </div>
-
-                            <div class="form-label-group">
-                                <label for="inputPassword">Password</label>
-                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                                
-                            </div>
-                            <hr class="my-4">
-                            <input name="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Sign in">
-                            <a class="btn btn-lg btn-primary btn-block text-uppercase" href="/enovel/user/forget_pass">Forget Password</a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+   
+    <h1>List Subscript</h1>
+    <div class="row table-pagination pr-md-5 px-3 pl-md-0">
+        <table class="table table-striped danhsach">
+            <thead>
+                <tr style="background-color: #274e13;" class="text-white">
+                    <th>Novel title</th>
+                    <th>Newest Chapter</th>
+                    <th>Upload Date</th>
+                    <th class="text-center">Views</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                <tr>
+                    <td>Please don't eat me</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-</body>
-<footer>
+        
+    <footer>
         <p>Assignment 1 - Web Programming - Fall 2018</p>
         <div id="goTop">
             <img src="/enovel/views/images/top.svg" alt="top" />
         </div>
     </footer>
-</html>
+</body>

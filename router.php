@@ -21,44 +21,39 @@ class Router {
 		}
 	}
 	function routeTable($url){
+		echo "<script> console.log('". $url ."'); </script>";
 		switch (true) {
-			case preg_match("~login~",$url):
+			case preg_match("~user/login~",$url):
 				readfile("views/login.php");
 				$controller = new UserController;
 				$controller->login();
 				break;
-			case preg_match("~logout~",$url):
+			case preg_match("~user/logout~",$url):
 				$controller = new UserController;
 				$controller->logout();
 				break;
-			case preg_match("~register~",$url):
+			case preg_match("~user/register~",$url):
 				readfile("views/register.php");
 				$controller = new UserController;
 				$controller->register();
 				break;
-			case preg_match("~edit~",$url):
+			case preg_match("~user/edit~",$url):
 				readfile("views/edit_account.php");
 				$controller = new UserController;
 				$controller->edit();
 				break;
-			case preg_match("~forget-pass~",$url):
-				readfile("views/edit_account.php");
+			case preg_match("~user/forget_pass~",$url):
+				readfile("views/forget_pass.php");
 				$controller = new UserController;
-				$controller->edit();
+				$controller->forgetPassword();
 				break;
-			case preg_match("~subscribe~",$url):
+			case preg_match("~user/list_subscipt~",$url):
 				$controller = new UserController;
 				$controller->subscribe();
 				break;
-			case preg_match("~unsubscribe~",$url):
+			case preg_match("~user/unsubscribe~",$url):
 				$controller = new UserController;
 				$controller->unsubscribe();
-				break;
-			
-			
-			case preg_match("~delete~",$url):
-				$controller = new UserController;
-				$controller->deleteAccount();
 				break;
 			//default ABC Ascending
 			case preg_match("~novel/list/~",$url):
