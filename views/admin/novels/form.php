@@ -12,6 +12,10 @@
 					    <input type="string" name="ten" class="form-control" placeholder="Enter Title" required>
 					  </div>
 					  <div class="form-group">
+					    <label>Type</label>
+					    <input type="string" name="theloai" class="form-control" placeholder="Enter Type" required>
+					  </div>
+					  <div class="form-group">
 					    <label>URL Image</label>
 					    <input type="string" name="url_anh" class="form-control" placeholder="Enter URL Image" required>
 					  </div>

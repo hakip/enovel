@@ -13,6 +13,10 @@
 					    <input type="string" name="ten" class="form-control" value="'.$novel['ten'].'" placeholder="Enter Title" required>
 					  </div>
 					  <div class="form-group">
+					    <label>Type</label>
+					    <input type="string" name="theloai" class="form-control" value="'.$novel['theloai'].'" placeholder="Enter Type" required>
+					  </div>
+					  <div class="form-group">
 					    <label>URL Image</label>
 					    <input type="string" name="url_anh" value= "'.$novel['url_anh'].'" class="form-control" placeholder="Enter URL Image" required>
 					  </div>
