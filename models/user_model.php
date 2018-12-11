@@ -42,17 +42,10 @@ class UserModel{
 		$sql = "UPDATE nguoidung SET matkhau = '".$user['matkhau']."',hoten = '".$user['hoten']."' WHERE id = '".$user['id']."'";
 		return mysqli_query($this->conn,$sql);
 	}
-	function subscribe($id, $novel_name){
+	function subscribe($novel_name){
 
 	}
 	function unsubscribe($id, $novel_name){
-
-	}
-	function getInfo($id){
-
-	}
-	//If possible
-	function deleteAccount($id){
 
 	}
 }
