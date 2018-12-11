@@ -18,7 +18,7 @@
     <div class="container" style="padding-top: 25vh;">
         <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-4 mx-auto">
-              <form method="POST" action="">
+              <form method="POST" action="index">
                   <div class="form-label-group pb-3">
                       <input type="email" name="email"  class="form-control" placeholder="Email address" required autofocus>
                   </div>

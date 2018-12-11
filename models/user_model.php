@@ -34,8 +34,34 @@ class UserModel{
 
 	function login($email, $password){
     $sql = 'SELECT * FROM `nguoidung` WHERE quyen = "admin" and email = "'.$email.'" and matkhau = "'.$password.'" ';
-    $resulf = $this->conn-> query($sql);
-    return $admin = mysqli_fetch_assoc($resulf);
+    $result = $this->conn-> query($sql);
+    return $admin = mysqli_fetch_assoc($result);
+	}
+
+	function a_index(){
+		$result = mysqli_query($this->conn, "SELECT id, hoten, email, matkhau FROM `nguoidung` WHERE quyen != 'admin' " );
+		return $result;
+	}
+
+	function a_create_user($fullname, $email, $password){
+		$sql = "INSERT INTO nguoidung(hoten,email,matkhau,quyen) VALUES('".$fullname."','".$email."','".$password."','user')";
+		return mysqli_query($this->conn,$sql);
+	}
+	function a_delete_user($id){
+		$deleteQuery = "DELETE FROM nguoidung WHERE id = '".$id."'";
+		return mysqli_query($this->conn,$deleteQuery);
+	}
+	function a_get_user($id){
+		$sql =  "SELECT id, hoten, email, matkhau FROM nguoidung WHERE id = '".$id."'";
+		return mysqli_query($this->conn,$sql);
+	}
+	function a_update_user($id, $fullname, $email, $password){
+		if ($password == "") {
+			$sql = "UPDATE nguoidung SET hoten = '".$fullname."', email = '".$email."' WHERE id = '".$id."'";
+		}else{
+			$sql = "UPDATE nguoidung SET matkhau = '".$password."', hoten = '".$fullname."', email = '".$email."' WHERE id = '".$id."'";
+		}
+		return mysqli_query($this->conn,$sql);
 	}
 }
 ?>

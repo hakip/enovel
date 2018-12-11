@@ -6,7 +6,7 @@
   }
   else
   {
-    header("location:login");
+    require_once('./views/admin/login_template.php');
   }
   
 ?>

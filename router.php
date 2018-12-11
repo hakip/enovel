@@ -121,6 +121,31 @@ class Router {
 				$controller = new AdminController;
 				$controller->checkSession();
 				break;
+			case preg_match("~admin/users~", $url):
+				$controller = new AdminUserController;
+				$controller->index();
+				break;
+			case preg_match("~admin/user_new~", $url):
+				$controller = new AdminUserController;
+				$controller->newrecord();
+				break;
+			case preg_match("~admin/user_create~", $url):
+				$controller = new AdminUserController;
+				$controller->createrecord();
+				break;
+			case preg_match("~admin/delete_user~", $url):
+				$controller = new AdminUserController;
+				$controller->deleterecord();
+				break;
+			case preg_match("~admin/user_edit~", $url):
+				$controller = new AdminUserController;
+				$controller->editrecord();
+				break;
+			case preg_match("~admin/user_update~", $url):
+				$controller = new AdminUserController;
+				$controller->updaterecord();
+				break;
+
 
 			default:
 				readfile("views/error.html");
