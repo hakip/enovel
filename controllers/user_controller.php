@@ -70,13 +70,7 @@ class UserController {
 					echo 'window.location.href = "/enovel";';
 					echo '</script>';
 				}
-			}
-			else {
-				echo '<script language="javascript">';
-				echo 'alert("Please fill all of form ");';  
-				echo '</script>';
-			}
-			
+			}		
 		
 	}
 	function forgetPassword()
@@ -102,11 +96,6 @@ class UserController {
 					echo 'alert("Account not exist");';  
 					echo '</script>';
 				}
-			}
-			else {
-				echo '<script language="javascript">';
-				echo 'alert("Please fill all of form ");';  
-				echo '</script>';
 			}
 		} 
 	}
@@ -140,11 +129,6 @@ class UserController {
 					echo 'alert("Account not exist, you need to check email or register");'; 
 					echo '</script>';
 				}
-			}
-			else {
-				echo '<script language="javascript">';
-				echo 'alert("Please fill all of form ");';  
-				echo '</script>';
 			}
 	}
 	function addSubscript()

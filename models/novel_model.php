@@ -45,6 +45,29 @@ class NovelModel {
 	function getChapter($novel_name,$chapter_number) {
 
 	}
+	//admin `id, url_anh, ten, mota, ngaytao, trangthai, tentacgia`
+	function a_index(){
+		$result = mysqli_query($this->conn, "SELECT * FROM truyen" );
+		return $result;
+	}
+
+	function a_create($ten, $url_anh, $mota, $trangthai, $tentacgia){
+		$sql = "INSERT INTO truyen(ten,url_anh,mota,trangthai,tentacgia,ngaytao) VALUES('".$ten."','".$url_anh."','".$mota."','".$trangthai."','".$tentacgia."', NOW())";
+		return mysqli_query($this->conn,$sql);
+	}
+	function a_delete_novel($id){
+		$deleteQuery = "DELETE FROM truyen WHERE id = '".$id."'";
+		return mysqli_query($this->conn,$deleteQuery);
+	}
+	function a_get_novel($id){
+		$sql =  "SELECT * FROM truyen WHERE id = '".$id."'";
+		return mysqli_query($this->conn,$sql);
+	}
+	function a_update_novel($id, $ten, $url_anh, $mota, $trangthai, $tentacgia){
+		$sql = "UPDATE truyen SET ten = '".$ten."', url_anh = '".$url_anh."', mota = '".$mota."', trangthai = '".$trangthai."', tentacgia = '".$tentacgia."', ngaysua = NOW() WHERE id = '".$id."'";
+
+		return mysqli_query($this->conn,$sql);
+	}
 
 }
 ?>

@@ -11,7 +11,7 @@
 			$str = '<thead class="thead-dark">
 			          <tr>
 			            <th scope="col"><button class="btn btn-outline-secondary text-white" onclick="newRecord();" >New</button></th>
-			            <th scope="col">Ho Ten</th>
+			            <th scope="col">Fullname</th>
 			            <th scope="col">Email</th>
 			            <th scope="col">Action</th>
 			          </tr>
