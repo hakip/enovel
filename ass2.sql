@@ -68,6 +68,7 @@ ALTER TABLE tuongtac ADD CONSTRAINT tuongtac_nguoidung FOREIGN KEY tuongtac_nguo
 -- Reference: tuongtac_truyen (table: tuongtac)
 ALTER TABLE tuongtac ADD CONSTRAINT tuongtac_truyen FOREIGN KEY tuongtac_truyen (truyen_id)
     REFERENCES truyen (id);
-
+-- add account Admin
+INSERT INTO `nguoidung` (`id`, `hoten`, `email`, `matkhau`, `quyen`) VALUES (NULL, 'admin', 'admin@info.sg', '123123', 'admin');
 -- End of file.
 
