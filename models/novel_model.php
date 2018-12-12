@@ -22,16 +22,22 @@ class NovelModel {
 	}
 	function getEntryList($filter) {
 		if($filter == null) {
-			$sql = 'SELECT * FROM truyen';
+			$sql = 'SELECT * FROM truyen'.' ORDER BY id DESC LIMIT 20';
+			$res = $this->conn->query($sql);
+			return $res;
+		}
+		else {
+			$filter_arr = explode("=", $filter[0]);
+			$where = " WHERE ".$filter_arr[0]." = '".$filter_arr[1]."'";
+			$sql = 'SELECT * FROM truyen'.$where.' ORDER BY id DESC LIMIT 20';
 			$res = $this->conn->query($sql);
 			return $res;
 		}
 	}
-	function getEntryInfo($novel_name) {
-		$sql = 'SELECT * FROM truyen';
+	function getEntryInfo($novel_id) {
+		$sql = "SELECT * FROM truyen WHERE id = '".$novel_id."'";
 		$res = $this->conn->query($sql);
-		echo $sql;
-		print_r($res);
+		return $res;
 	}
 	function getViewCount($novel_id){
 		$sql = 'SELECT luotxem FROM tuongtac WHERE truyen_id ='.$novel_id;
@@ -39,12 +45,19 @@ class NovelModel {
 		$rows = mysqli_fetch_row($res);
 		return $rows[0];
 	}
-	//for AJAX call only
-	function getListChapter() {
 
+	function getListChapter($id) {
+		$sql = 'SELECT * FROM chuong WHERE truyen_id ='.$id.' ORDER BY id DESC LIMIT 20';
+		$res = $this->conn->query($sql);
+		return $res;
 	}
 	function getChapter($novel_name,$chapter_number) {
-
+		$chap_name = "Chapter 1";
+		$sql = 'SELECT * FROM chuong WHERE truyen_id ='.$novel_name.' AND ten ="'.$chap_name.'" ORDER BY id DESC LIMIT 20';
+		if($res = $this->conn->query($sql)) {
+			return $res;
+		}
+		else echo "Chapter not found";
 	}
 	//admin `id, url_anh, ten, mota, ngaytao, trangthai, tentacgia`
 	function a_index(){

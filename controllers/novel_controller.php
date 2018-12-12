@@ -11,19 +11,15 @@ class NovelController {
 		// readfile("././views/list_novel.php");
 		$model = new NovelModel;
 		$res = $model->getEntryList($filter);
-		print_r($res);
-		$rows = mysqli_fetch_row($res);
 		readfile("././views/part1.php");
 		foreach ($res as $row) {
-			print_r($row);
 			$name = $row['ten'];
-			$link = $this->makeLink($name);
-			echo '<tr><td><a class="alink" href="/enovel/novel'.$link.'">'.$name.'</a></td>';
+			$link = $this->makeLink($row['id']);
+			echo '<tr><td><a class="alink" href="/enovel/novel/'.$link.'">'.$name.'</a></td>';
 			echo '<td>Chapter 1</td>';
 			echo  "<td>31/12/2017</td>";
 			$res = $model->getViewCount($row["id"]);
-			echo $res;
-
+			echo '<td class="text-center">'.$res.'</td></tr>';
 		}
 		readfile("././views/part2.php");
 		// if($filter["filter"]="yes"){
@@ -41,16 +37,73 @@ class NovelController {
 		}
 		return $res;
 	}
-	function getEntryInfo($novel_name) {
+	function getEntryInfo($novel_id) {
 		$model = new NovelModel;
-		$model->getEntryInfo("abd");
+		$res = $model->getEntryInfo($novel_id);
+		$row = mysqli_fetch_row($res);
+		readfile("././views/novel_info1.php");
+		$before = '" alt="failed to load">
+                        <div class="wrapper">
+                            <div class="btn-group-vertical">
+                                <input name="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Add to list">
+                                <button type="button" class="btn btn-info"><a href="/enovel/novel/'.$novel_id.'/1">First chapter</a></button>
+                                <button type="button" class="btn btn-warning"><a href="/enovel/novel/'.$novel_id.'/1">Lasted chapter</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="new-story__block new-story__right col-md-9">
+                        <h3 class="text-center">';
+		echo $row[1].$before.$row[2].'</h3><p>'.$row[4].'</p><div class="new-story__tags"><table class="table table-borderless table-hover"><tbody><tr><td class="line">Author</td><td>'.$row[8].'</td></tr><tr><td class="line">Genres</td><td>'.$row[3].'</td></tr><tr><td class="line">Status</td><td>';
+		if($row[7] == 0) $stt = "Ongoing";
+		else $stt = "Completed";
+		echo $stt.'</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="line">Views</td>
+                                        <td>1230</td>
+                                    </tr>';
+        readfile("././views/novel_info2.php");
+        echo $this->getListChapter($novel_id);
+        readfile("././views/novel_info3.php");
 	}
 	//for AJAX call only
-	function getListChapter() {
-
+	function getListChapter($id) {
+		$model = new NovelModel;
+		$res = $model->getListChapter($id);
+		foreach ($res as $row) {
+			echo '<tr><td><a href="/enovel/novel/'.$id.'/'.$row["id"].'">'.$row['ten'].'</a></td>
+			                                    <td><a href="read.php">'.$row['ngaytao'].'</a></td>
+			                                </tr>
+			                                <tr>';
+		}
 	}
 	function getChapter($name,$chap) {
-		echo $name." ".$chap;
+		$model = new NovelModel;
+		$res = $model->getChapter($name, $chap);
+		$row = mysqli_fetch_row($res);
+		readfile("././views/read.php");
+		//tim ten truyen
+		$tentruyen = $this->getTentruyen($name);
+		echo $tentruyen.'</h2></div></div><h3 class="border-chapter">'.$row[1].'</h3>
+            <div class="col-12 col-sm-10 offset-sm-1 pt-5">
+                <div class="card">
+
+                    <div class="card-header pt-5 bg-chapter text-center px-0">
+                        <button class="btn btn-success text-white m-1" style="box-shadow: 2px 2px black;">Previous</button>
+                        <a href="novel_info.php"><button class="btn btn-primary text-white m-1" style="box-shadow: 2px 2px black;">Chapter list</button></a>
+                        <button class="btn btn-success text-white m-1" style="box-shadow: 2px 2px black;">Next</button>
+                    </div>
+                    <ul class="list-group list-group-flush content">
+                        <li class="list-group-item">';
+		echo $row[2];
+		readfile("././views/read2.php");
+	}
+	function getTentruyen($id){
+		$model = new NovelModel;
+		$res = $model->getEntryInfo($id);
+		$row = mysqli_fetch_row($res);
+		return $row[2];
 	}
 
 }
