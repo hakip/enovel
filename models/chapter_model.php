@@ -18,5 +18,25 @@ class ChapterModel{
 		$result = mysqli_query($this->conn, "SELECT * FROM chuong" );
 		return $result;
 	}
+	function a_delete($id){
+		$deleteQuery = "DELETE FROM chuong WHERE id = '".$id."'";
+		return mysqli_query($this->conn,$deleteQuery);
+	}
+	function a_create($ten, $noidung, $truyen_id){
+		$sql = "INSERT INTO chuong(ten,noidung,truyen_id,ngaytao) VALUES('".$ten."','".$noidung."','".$truyen_id."', NOW())";
+		return mysqli_query($this->conn,$sql);
+	}
+	function a_delete_all($id_novel){
+		$deleteQuery = "DELETE FROM chuong WHERE truyen_id = '".$id_novel."'";
+		return mysqli_query($this->conn,$deleteQuery);
+	}
+	function a_get_chapter($id){
+		$sql =  "SELECT * FROM chuong WHERE id = '".$id."'";
+		return mysqli_query($this->conn,$sql);
+	}
+	function a_update($id, $ten, $noidung, $truyen_id){
+		$sql = "UPDATE chuong SET ten = '".$ten."',noidung = '".$noidung."',truyen_id = '".$truyen_id."',ngaysua = 'NOW()' WHERE id = '".$id."' ";
+		return mysqli_query($this->conn,$sql);
+	}
 }
 ?>

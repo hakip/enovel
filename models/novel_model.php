@@ -5,6 +5,7 @@ include_once 'controllers/user_controller.php';
 include_once 'controllers/novel_controller.php';
 include_once 'models/user_model.php';
 include_once 'models/novel_model.php';
+include_once 'models/chapter_model.php';
 
 class NovelModel {
 	//Models connect to database, get data then return to controllers.
@@ -56,6 +57,8 @@ class NovelModel {
 		return mysqli_query($this->conn,$sql);
 	}
 	function a_delete_novel($id){
+		$model_chapter = new ChapterModel();
+		$model_chapter->a_delete_all($id);
 		$deleteQuery = "DELETE FROM truyen WHERE id = '".$id."'";
 		return mysqli_query($this->conn,$deleteQuery);
 	}

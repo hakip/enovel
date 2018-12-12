@@ -174,6 +174,26 @@ class Router {
 				$controller = new AdminChaptersController;
 				$controller->index();
 				break;
+			case preg_match("~admin/chapter_new~", $url):
+				$controller = new AdminChaptersController;
+				$controller->newrecord();
+				break;
+			case preg_match("~admin/chapter_create~", $url):
+				$controller = new AdminChaptersController;
+				$controller->createrecord();
+				break;
+			case preg_match("~admin/delete_chapter~", $url):
+				$controller = new AdminChaptersController;
+				$controller->deleterecord();
+				break;
+			case preg_match("~admin/chapter_edit~", $url):
+				$controller = new AdminChaptersController;
+				$controller->editrecord();
+				break;
+			case preg_match("~admin/chapter_update~", $url):
+				$controller = new AdminChaptersController;
+				$controller->updaterecord();
+				break;
 
 
 			default:

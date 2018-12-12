@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto pr-3">
                   <li class="nav-item">
-                        <a href="#" onclick="ajaxChapterIndex();" class="nav-link menu"><i class="fas fa-book"></i> Chapters</b></a>
+                        <a href="#" onclick="ajaxChapterIndex();" class="nav-link menu"><i class="fas fa-scroll"></i> Chapters</b></a>
                   </li>
                   <li class="nav-item">
                         <a href="#" onclick="ajaxNovelIndex();" class="nav-link menu"><i class="fas fa-book"></i> Novels</b></a>
@@ -77,6 +77,11 @@
           }else if (window.location.hash === "#err.up.novel"){
             alert("Update novel failed! You can try again!")
             ajaxNovelIndex();
+          }else if (window.location.hash === "#rel.in.chapter") {
+            ajaxChapterIndex();
+          }else if (window.location.hash === "#err.up.chapter"){
+            alert("Update chapter failed! You can try again!")
+            ajaxChapterIndex();
           }
       });
       // ----------- User -----------
@@ -171,6 +176,37 @@
           }
         });
       };
+      function newChapter(){
+        $.ajax({
+          url      : 'admin/chapter_new',
+          method   : 'get', 
+          success  : function(data){
+            $('#form_new').empty().append(data);
+            $('#newrecord').modal("toggle");
+          }
+        });
+      }
+      function delete_chapter(_this){
+        $.ajax({
+          url      : 'admin/delete_chapter',
+          method   : 'post',
+          data     : {id: $($(_this.closest('tr')).find("th[name=id_chapter]")[0]).data('id')},
+          success  : function(data){
+            ajaxChapterIndex();
+          }
+        });
+      }
+      function edit_chapter(_this){
+        $.ajax({
+          url      : 'admin/chapter_edit',
+          method   : 'post',
+          data     : {id: $($(_this.closest('tr')).find("th[name=id_chapter]")[0]).data('id')},
+          success  : function(data){
+            $('#form_new').empty().append(data);
+            $('#newrecord').modal("toggle");
+          }
+        });
+      }
     </script>
 
 <style>
