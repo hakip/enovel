@@ -145,7 +145,7 @@
     <div class="story-list">
         <div class="container">
             <h2 class="title">
-                <a href="/enovel/views/list_novel.php">Lasted Updates >></a>
+                <a href="/enovel/novel/list/">Lasted Updates >></a>
             </h2>
             <div class="story-list__box">
                 <div class="row">
@@ -274,7 +274,7 @@
                 <div class="col-lg-9">
                     <div class="story-list">
                         <h2 class="title">
-                            <a href="/enovel/views/list_novel.php">Completed Novels>></a>
+                            <a href="/enovel/novel/list/">Completed Novels>></a>
                         </h2>
                         <div class="story-list__box">
                             <div class="row">

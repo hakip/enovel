@@ -76,9 +76,9 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right item" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"></a>
-                            <a class="dropdown-item" href="/enovel/views/list_novel.php">Hot picks</a>
+                            <a class="dropdown-item" href="/enovel/novel/list/">Hot picks</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/enovel/views/list_novel.php">New entries</a>
+                            <a class="dropdown-item" href="/enovel/novel/list/">New entries</a>
                         </div>
                     </li>
                 </ul>

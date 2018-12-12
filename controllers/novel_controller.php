@@ -11,7 +11,6 @@ class NovelController {
 		// readfile("././views/list_novel.php");
 		$model = new NovelModel;
 		$res = $model->getEntryList($filter);
-		$rows = mysqli_fetch_row($res);
 		readfile("././views/part1.php");
 		foreach ($res as $row) {
 			$name = $row['ten'];
@@ -42,14 +41,13 @@ class NovelController {
 		$model = new NovelModel;
 		$res = $model->getEntryInfo($novel_id);
 		$row = mysqli_fetch_row($res);
-		print_r($row);
 		readfile("././views/novel_info1.php");
 		$before = '" alt="failed to load">
                         <div class="wrapper">
                             <div class="btn-group-vertical">
                                 <input name="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Add to list">
-                                <button type="button" class="btn btn-info">First chapter</button>
-                                <button type="button" class="btn btn-warning">Lasted chapter</button>
+                                <button type="button" class="btn btn-info"><a href="/enovel/novel/'.$novel_id.'/1">First chapter</a></button>
+                                <button type="button" class="btn btn-warning"><a href="/enovel/novel/'.$novel_id.'/1">Lasted chapter</a></button>
                             </div>
                         </div>
                     </div>
@@ -66,15 +64,40 @@ class NovelController {
                                         <td>1230</td>
                                     </tr>';
         readfile("././views/novel_info2.php");
-        //chapter
+        echo $this->getListChapter($novel_id);
         readfile("././views/novel_info3.php");
 	}
 	//for AJAX call only
-	function getListChapter() {
-
+	function getListChapter($id) {
+		$model = new NovelModel;
+		$res = $model->getListChapter($id);
+		foreach ($res as $row) {
+			echo '<tr><td><a href="/enovel/novel/'.$id.'/'.$row["id"].'">'.$row['ten'].'</a></td>
+			                                    <td><a href="read.php">'.$row['ngaytao'].'</a></td>
+			                                </tr>
+			                                <tr>';
+		}
 	}
 	function getChapter($name,$chap) {
-		echo $name." ".$chap;
+		$model = new NovelModel;
+		$res = $model->getChapter($name, $chap);
+		$row = mysqli_fetch_row($res);
+		readfile("././views/read.php");
+		//tim ten truyen
+		$tentruyen = "ten tten ";
+		echo $tentruyen.'</h2></div></div><h3 class="border-chapter">'.$row[1].'</h3>
+            <div class="col-12 col-sm-10 offset-sm-1 pt-5">
+                <div class="card">
+
+                    <div class="card-header pt-5 bg-chapter text-center px-0">
+                        <button class="btn btn-success text-white m-1" style="box-shadow: 2px 2px black;">Previous</button>
+                        <a href="novel_info.php"><button class="btn btn-primary text-white m-1" style="box-shadow: 2px 2px black;">Chapter list</button></a>
+                        <button class="btn btn-success text-white m-1" style="box-shadow: 2px 2px black;">Next</button>
+                    </div>
+                    <ul class="list-group list-group-flush content">
+                        <li class="list-group-item">';
+		echo $row[2];
+		readfile("././views/read2.php");
 	}
 
 }

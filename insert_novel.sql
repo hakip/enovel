@@ -30,3 +30,35 @@ VALUES (
 	'2018-12-12',
 	'Ongoing',
 	'XUANHUAN');
+INSERT INTO `truyen`(`url_anh`,`ten`, `theloai`,`mota`, `ngaytao`, `ngaysua`, `trangthai`, `tentacgia`)
+VALUES (
+	'https://i.imgur.com/6Ua5si8.jpg',
+	'Picked Up A Demon King To Be A Maid',
+	'COMEDY',
+	'If the demon king was reduced to a slave, what would you do to her? Would you kill her and become humanity’s greatest hero? Or would you enslave her and enjoy the highest level of pleasure in the world? No, he doesn’t want any of that, Lin Xiao just wanted to be an unremarkable reserve hero. Black stocking long leg princess, two-faced loli saint… no one can tempt him to change his majestic ideals of eating and waiting for death! That’s why his answer was — “Demon King, can you quickly put on your clothes and scram on out of here?”',
+	'2018-12-12',
+	'2018-12-12',
+	'Ongoing',
+	'半筐桃子');
+INSERT INTO `truyen`(`url_anh`,`ten`, `theloai`,`mota`, `ngaytao`, `ngaysua`, `trangthai`, `tentacgia`)
+VALUES (
+	'https://i.imgur.com/qfTtNB7.jpg',
+	'Martial God Asura',
+	'ACTION',
+	'In terms of potential, Even if you are not a genius, you can learn Mysterious Techniques and martial skills. You can also learn without a teacher.
+In terms of strength, Even if you have tens of thousands of treasures, you may not be able to defeat my grand World Spirit army.
+Who am I? Every single living thing in the world views me as Asura. However, I did not know about that. Thus, as Asura, I became the Martial G.o.d.',
+	'2018-12-12',
+	'2018-12-12',
+	'Ongoing',
+	'XIULUO WUSHEN');
+INSERT INTO `truyen`(`url_anh`,`ten`, `theloai`,`mota`, `ngaytao`, `ngaysua`, `trangthai`, `tentacgia`)
+VALUES (
+	'https://i.imgur.com/tzGNJwq.jpg',
+	'Spirit Hotel',
+	'COMEDY',
+	'After being unemployed for a long time, Feisha s.h.i.+ finally found a new job – the front desk manager at the oldest hotel in the universe. This hotel has a fallen angel, vampire, werewolf, faerie, dwarf, t.i.tan, invisible person&h.e.l.lip; just no humans. This hotel serves customers who are fallen angels, vampires, werewolves, faeries, dwarfs, t.i.tans, invisible people&h.e.l.lip; still no humans. This hotel’s name? Noah’s Ark.',
+	'2018-12-12',
+	'2018-12-12',
+	'Ongoing',
+	'SU YOU BING');

@@ -93,7 +93,7 @@ class Router {
 				$filters = explode("&", $filterStr);
 				$controller->getEntryList($filters);
 				break;
-			case preg_match("#novel/[^/]+/chap[^/]+#",$url):
+			case preg_match("#novel/[^/]+/[^/]+#",$url):
 				$controller = new NovelController;
 				$arr = explode("/",$url);
 				$name = $arr[1];
