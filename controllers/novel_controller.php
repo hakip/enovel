@@ -84,7 +84,7 @@ class NovelController {
 		$row = mysqli_fetch_row($res);
 		readfile("././views/read.php");
 		//tim ten truyen
-		$tentruyen = "ten tten ";
+		$tentruyen = $this->getTentruyen($name);
 		echo $tentruyen.'</h2></div></div><h3 class="border-chapter">'.$row[1].'</h3>
             <div class="col-12 col-sm-10 offset-sm-1 pt-5">
                 <div class="card">
@@ -98,6 +98,12 @@ class NovelController {
                         <li class="list-group-item">';
 		echo $row[2];
 		readfile("././views/read2.php");
+	}
+	function getTentruyen($id){
+		$model = new NovelModel;
+		$res = $model->getEntryInfo($id);
+		$row = mysqli_fetch_row($res);
+		return $row[2];
 	}
 
 }

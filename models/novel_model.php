@@ -51,9 +51,12 @@ class NovelModel {
 		return $res;
 	}
 	function getChapter($novel_name,$chapter_number) {
-		$sql = 'SELECT * FROM chuong WHERE truyen_id ='.$novel_name.' AND id ='.$chapter_number.' ORDER BY id DESC LIMIT 20';
-		$res = $this->conn->query($sql);
-		return $res;
+		$chap_name = "Chapter 1";
+		$sql = 'SELECT * FROM chuong WHERE truyen_id ='.$novel_name.' AND ten ="'.$chap_name.'" ORDER BY id DESC LIMIT 20';
+		if($res = $this->conn->query($sql)) {
+			return $res;
+		}
+		else echo "Chapter not found";
 	}
 	//admin `id, url_anh, ten, mota, ngaytao, trangthai, tentacgia`
 	function a_index(){
