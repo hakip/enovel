@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Dungeon Defense - Novel details</title>
+    <title>Novel details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/enovel/views/styles/info.css">
     <link rel="stylesheet" href="/enovel/views/styles/footer.css">

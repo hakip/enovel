@@ -15,7 +15,7 @@ class NovelController {
 		readfile("././views/part1.php");
 		foreach ($res as $row) {
 			$name = $row['ten'];
-			$link = $this->makeLink($name);
+			$link = $this->makeLink($row['id']);
 			echo '<tr><td><a class="alink" href="/enovel/novel/'.$link.'">'.$name.'</a></td>';
 			echo '<td>Chapter 1</td>';
 			echo  "<td>31/12/2017</td>";
@@ -38,9 +38,36 @@ class NovelController {
 		}
 		return $res;
 	}
-	function getEntryInfo($novel_name) {
+	function getEntryInfo($novel_id) {
 		$model = new NovelModel;
-		$model->getEntryInfo("abd");
+		$res = $model->getEntryInfo($novel_id);
+		$row = mysqli_fetch_row($res);
+		print_r($row);
+		readfile("././views/novel_info1.php");
+		$before = '" alt="failed to load">
+                        <div class="wrapper">
+                            <div class="btn-group-vertical">
+                                <input name="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Add to list">
+                                <button type="button" class="btn btn-info">First chapter</button>
+                                <button type="button" class="btn btn-warning">Lasted chapter</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="new-story__block new-story__right col-md-9">
+                        <h3 class="text-center">';
+		echo $row[1].$before.$row[2].'</h3><p>'.$row[4].'</p><div class="new-story__tags"><table class="table table-borderless table-hover"><tbody><tr><td class="line">Author</td><td>'.$row[8].'</td></tr><tr><td class="line">Genres</td><td>'.$row[3].'</td></tr><tr><td class="line">Status</td><td>';
+		if($row[7] == 0) $stt = "Ongoing";
+		else $stt = "Completed";
+		echo $stt.'</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="line">Views</td>
+                                        <td>1230</td>
+                                    </tr>';
+        readfile("././views/novel_info2.php");
+        //chapter
+        readfile("././views/novel_info3.php");
 	}
 	//for AJAX call only
 	function getListChapter() {

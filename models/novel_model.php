@@ -35,11 +35,12 @@ class NovelModel {
 			return $res;
 		}
 	}
-	function getEntryInfo($novel_name) {
-		$sql = 'SELECT * FROM truyen';
+	function getEntryInfo($novel_id) {
+		$sql = "SELECT * FROM truyen WHERE id = '".$novel_id."'";
 		$res = $this->conn->query($sql);
 		echo $sql;
 		print_r($res);
+		return $res;
 	}
 	function getViewCount($novel_id){
 		$sql = 'SELECT luotxem FROM tuongtac WHERE truyen_id ='.$novel_id;
